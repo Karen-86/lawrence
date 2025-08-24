@@ -39,7 +39,7 @@ const Template = () => {
         <HeroSection />
         <PartnersSection />
         <FeaturedWorkSection />
-        <hr className="border-line" />
+        {/* <hr className="border-line" /> */}
         <ServicesSection />
         <DifferenceSection />
         <BespokeSection />
@@ -65,8 +65,9 @@ const HeroSection = () => {
       >
         <Image
           src={heroCoverImage}
-          width={740}
-          height={720}
+          // width={1920}
+          // height={720}
+          fill={true}
           alt="background image"
           className="absolute top-0 left-0 w-full h-full object-cover [object-position:85%]"
         />
@@ -198,11 +199,22 @@ const ServicesSection = () => {
     },
   ];
   return (
-    <section className="services !pb-[10rem]" id="services">
+    <section className="services !pb-[0] sm:!pb-[3rem] !pt-[2rem] sm:!pt-[6rem] 4xl:!pt-[9rem]" id="services">
       <div className="container">
-        <CarouselDemo className="custom-carousel" itemClassName="" anglesClassName="" items={content}>
-          {({ item, index }) => <ServiceCard {...item} index={index} />}
-        </CarouselDemo>
+        <div className="max-w-[1160px] 4xl:max-w-full mx-auto">
+          <CarouselDemo
+            className="custom-carousel "
+            contentClassName=" transition-transform duration-[1000ms] ease-linear"
+            itemClassName=""
+            noAngles={true}
+            autoplay={true}
+          
+            anglesClassName=""
+            items={content}
+          >
+            {({ item, index }) => <ServiceCard {...item} index={index} />}
+          </CarouselDemo>
+        </div>
       </div>
     </section>
   );

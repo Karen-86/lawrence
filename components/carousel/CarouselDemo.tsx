@@ -101,7 +101,7 @@ export function CarouselDemo({
       )}
 
       {/* Progress Line */}
-      <div className={`absolute bottom-[-250px] xl:bottom-[-180px] w-full line flex  items-center gap-3 text-[1.125rem] font-medium ${lineClassName}`}>
+      <div className={`absolute bottom-[-70px] xl:bottom-[-100px] w-full line flex  items-center gap-3 text-[1.125rem] font-medium ${lineClassName}`}>
         <div className=" w-full h-[2px] bg-gray-200  ">
           <div className="h-full bg-secondary transition-all duration-500  " style={{ width: `${progress}%` }} />
         </div>
