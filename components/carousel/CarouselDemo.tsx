@@ -67,6 +67,7 @@ export function CarouselDemo({
       console.log("trigger");
       updateProgress();
     });
+    
   }, [api]);
 
   return (

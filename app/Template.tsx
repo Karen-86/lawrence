@@ -204,8 +204,8 @@ const ServicesSection = () => {
         <div className="max-w-[1160px] 4xl:max-w-full mx-auto">
           <CarouselDemo
             className="custom-carousel "
-            contentClassName=" transition-transform duration-[1000ms] ease-linear"
-            itemClassName=""
+            contentClassName=" transition-transform duration-[1000ms] ease-linear !-ml-20"
+            itemClassName="!pl-20"
             noAngles={true}
             autoplay={true}
           
