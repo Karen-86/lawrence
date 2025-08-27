@@ -45,7 +45,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!navbar.current) return;
-    setHeight(navbar.current.offsetHeight.toString() + "px");
+    setHeight(navbar.current.getBoundingClientRect().height.toString() + "px");
   }, [navbar]);
 
   return (
@@ -63,7 +63,7 @@ export default function Navbar() {
       </div>
       <div className=" relative z-2 bg-white">
         <div className="container">
-          <div className="flex flex-wrap items-center w-full justify-between gap-y-2 gap-x-5  py-4 ">
+          <div className="flex flex-wrap items-center w-full justify-between gap-y-2 gap-x-2  py-4 ">
             <div className="left-block flex items-center gap-1 sm:gap-2">
               <a
                 href="#/"
@@ -99,7 +99,7 @@ export default function Navbar() {
 
             <a
               href="#/"
-              className="px-2 flex md:hidden font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black "
+              className="px-2 flex md:hidden font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black"
             >
               Book a Fitting
             </a>
@@ -133,10 +133,11 @@ export default function Navbar() {
 const Menu = ({ isMenuOpen = false, height = "" }) => {
   useLockBodyScroll(isMenuOpen);
   const pathname = usePathname();
+  console.log(height)
   return (
     <div className="relative z-1">
       <div
-        className={`menu flex flex-col  bg-white absolute top-[100%] z-2 w-full left-0 h-[calc(100vh-${height})] translate-y-[-100%] duration-300 ${
+        className={`menu flex flex-col  bg-white absolute top-[100%] z-2 w-full left-0 h-[calc(100vh-149px)] translate-y-[-100%] duration-300 ${
           isMenuOpen ? "!translate-y-0" : ""
         }`}
       >
