@@ -178,6 +178,7 @@ html {
 body {
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
   color: var(--color-dark);
+  position: relative;
 }
 
 @utility container {

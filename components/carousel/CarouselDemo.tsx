@@ -25,7 +25,7 @@ type CarouselDemoProps = {
   align?: "start" | "center";
   autoplay?: boolean;
   noAngles?: boolean;
-  items?: { [key: string]: string | number | (() => void) }[];
+  items?: any;
   children: (props: { item: { [key: string]: string | number | (() => void) }; index: number }) => ReactNode;
 };
 
@@ -78,13 +78,13 @@ export function CarouselDemo({
       opts={{
         align: align,
         loop: loop,
-         
+         duration: 40
       }}
       orientation={orientation}
-      plugins={autoplay ? [Autoplay({ delay: 4000, stopOnInteraction: true })] : []}
+      plugins={autoplay ? [Autoplay({ delay: 4000, stopOnInteraction: true, })] : []}
     >
-      <CarouselContent className={`-ml-1 ${contentClassName}`}>
-        {items.map((item, index) => (
+      <CarouselContent className={`-ml-1 ${contentClassName} `}>
+        {items.map((item:any, index:any) => (
           <CarouselItem key={index} className={`pl-1 ${itemClassName}`}>
             <div className="p-1">{children({ item, index })}</div>
           </CarouselItem>
@@ -94,10 +94,10 @@ export function CarouselDemo({
       {/* Navigation Arrows */}
       {!noAngles && (
         <div
-          className={`carousel-angles max-w-[200px] xl:max-w-none mt-[100px] xl:mt-0 xl:top-0 xl:h-full w-full absolute left-[50%] transform-[translateX(-50%)] pointer-events-none  ${anglesClassName}`}
+          className={`carousel-angles hidden sm:block max-w-[100px] xl:max-w-none mt-[120px] xl:mt-0 xl:top-0 xl:h-full w-full absolute left-[50%] transform-[translateX(-50%)] pointer-events-none  ${anglesClassName}`}
         >
-          <CarouselPrevious className="pointer-events-auto w-[120px] h-[120px] xl:w-[170px] xl:h-[170px] transform-[rotateZ(180deg)] xl:top-[300px]  xl:left-[0px] cursor-pointer " />
-          <CarouselNext className="pointer-events-auto w-[120px] h-[120px] xl:w-[170px] xl:h-[170px]  cursor-pointer absolute xl:right-[0px]  lg:bottom-[-100px] xl:top-auto " />
+          <CarouselPrevious className="pointer-events-auto w-[70px] h-[70px] xl:w-[100px] xl:h-[100px] 4xl:w-[200px] 4xl:h-[200px] transform-[rotateZ(180deg)] xl:top-[200px]  xl:left-[0px] cursor-pointer " />
+          <CarouselNext className="pointer-events-auto w-[70px] h-[70px] xl:w-[100px] xl:h-[100px] 4xl:w-[200px] 4xl:h-[200px]  cursor-pointer absolute xl:right-[0px]  lg:bottom-[-60px] xl:top-auto " />
         </div>
       )}
 

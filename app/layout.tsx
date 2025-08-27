@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat, Baskervville } from "next/font/google";
 import "../styles/index.css";
+import Provider from "@/context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-   style: ["normal", "italic"],
+  style: ["normal", "italic"],
   weight: [
     "100", // Thin
     "200", // ExtraLight
@@ -71,11 +72,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${baskervville.variable} ${montserrat.variable}  antialiased`}>
-        {children}
-      </body>
-    </html>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} ${baskervville.variable} ${montserrat.variable}  antialiased`}
+          >
+          <Provider>
+          {children}
+    </Provider>
+        </body>
+      </html>
   );
 }

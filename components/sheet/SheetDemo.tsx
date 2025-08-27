@@ -38,7 +38,7 @@ export function SheetDemo({
   const closeSheet = () => setIsOpen(false);
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+    <Sheet open={isOpen} onOpenChange={setIsOpen} >
       <SheetTrigger asChild>{trigger ? trigger : <Button variant="outline">Open</Button>}</SheetTrigger>
       <SheetContent className={`${contentClassName} `} side={side}>
         <SheetHeader className="text-left">

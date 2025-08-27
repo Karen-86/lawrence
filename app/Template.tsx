@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Footer } from "@/components/index.js";
 import { ButtonDemo, CustomLink, CarouselDemo, ServiceCard, DifferenceCard } from "@/components/index.js";
 import localData from "@/localData";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const {
   heroCoverImage,
@@ -188,29 +189,52 @@ const ServicesSection = () => {
     {
       bigImage: serviceSample1Image,
       smallImage: serviceSmallSample1Image,
+      title: "Formal Bespoke",
+      firstColTitle: "Attention to Every Detail",
+      firstColDescritpion:
+        "From lapels to lining, buttons to stitching, each element is carefully chosen and meticulously crafted to reflect your personal style and the highest standards of bespoke tailoring.",
+      thirdColDescription:
+        "Classic tailored suits for business, events, and special occasions. Every garment is precision-cut and hand-finished to ensure the perfect fit and timeless elegance.",
     },
     {
       bigImage: serviceSample2Image,
       smallImage: serviceSmallSample2Image,
+      title: "Casual Bespoke",
+      firstColTitle: "Effortless Elegance, Tailored to You",
+      firstColDescritpion:
+        "From relaxed blazers to smart-casual essentials, our bespoke casualwear blends comfort with refined style. Each piece is designed to complement your lifestyle while reflecting your individuality.",
+      thirdColDescription:
+        "Explore our casual ranges, all bespoke and exclusive to you. Add your personality and style to your garments!",
     },
     {
       bigImage: serviceSample3Image,
       smallImage: serviceSmallSample3Image,
+      title: "Wedding Bespoke",
+      firstColTitle: "Every Detail, Perfected",
+      firstColDescritpion:
+        "From the cut of your jacket to the finest stitching, our bespoke process ensures that every element of your wedding suit is crafted with precision. A look as unique as your story.",
+      thirdColDescription:
+        "Celebrate your big day in a suit made just for you. Timeless elegance, tailored to your taste, ensuring you look and feel exceptional.",
     },
   ];
+
+  const isMobile = useIsMobile();
+
   return (
     <section className="services !pb-[0] sm:!pb-[3rem] !pt-[2rem] sm:!pt-[6rem] 4xl:!pt-[9rem]" id="services">
       <div className="container">
         <div className="max-w-[1160px] 4xl:max-w-full mx-auto">
           <CarouselDemo
             className="custom-carousel "
-            contentClassName=" transition-transform duration-[1000ms] ease-linear !-ml-20"
+            // contentClassName=" transition-transform duration-[3000ms] ease-linear !-ml-20 transform-gpu will-change-transform"
+            contentClassName="!-ml-20"
             itemClassName="!pl-20"
-            noAngles={true}
-            autoplay={true}
-          
+            // noAngles={true}
+            autoplay={isMobile}
+            loop={true}
             anglesClassName=""
             items={content}
+            lineClassName="!bottom-[-40px] sm:!bottom-[-70px]"
           >
             {({ item, index }) => <ServiceCard {...item} index={index} />}
           </CarouselDemo>
@@ -251,14 +275,13 @@ const DifferenceSection = () => {
 
         <CarouselDemo
           className="custom-carousel sm:hidden"
-          contentClassName=" transition-transform duration-[1000ms] ease-linear"
           // contentClassName="transition-transform duration-[800ms] ease-in-out"
           itemClassName=""
           lineClassName="!bottom-[-70px]"
           noAngles={true}
           items={content}
           autoplay={true}
-          // loop={true}
+          loop={true}
         >
           {({ item, index }) => <DifferenceCard {...item} index={index} />}
         </CarouselDemo>

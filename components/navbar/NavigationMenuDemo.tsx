@@ -25,8 +25,18 @@ export function NavigationMenuDemo() {
 
   return (
     <NavigationMenu className={`hidden lg:flex navigation-menu pt-10 min-w-full justify-between`} delayDuration={0}>
-      {logo}
-      <NavigationMenuList className="">
+      <div className="flex items-center">
+        <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
+          Shop
+        </a>
+        <Link href={"#services"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "services" ? "text-success focus:text-success" : ""}>Services</div>
+        </Link>
+        <Link href={"#gallery"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "gallery" ? "text-success focus:text-success" : ""}>Gallery</div>
+        </Link>
+      </div>
+      {/* <NavigationMenuList className="">
         {navLinks.map(({ href, title }, index) => {
           const activeLink = (href === "/" && pathname === "/") || (href !== "/" && pathname.startsWith(href));
           return (
@@ -37,24 +47,16 @@ export function NavigationMenuDemo() {
             </NavigationMenuItem>
           );
         })}
+      </NavigationMenuList> */}
+      {logo}
 
-        {/* <NavigationMenuItem>
-          <NavigationMenuTrigger>Modules</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[300px] gap-1 p-4 md:w-[400px] md:grid-cols-2 lg:w-[500px]">
-              {dropdownLinksModules.map((component, index) => (
-                <ListItem key={index} title={component.title} href={component.href}>
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem> */}
-      </NavigationMenuList>
-      <div className="flex">
-        <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
-          Shop
-        </a>
+      <div className="flex items-center">
+        <Link href={"#about"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "about" ? "text-success focus:text-success" : ""}>About</div>
+        </Link>
+        <Link href={"#contact"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "contact" ? "text-success focus:text-success" : ""}>Contact</div>
+        </Link>
         <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
           Book a fitting
         </a>
@@ -63,8 +65,6 @@ export function NavigationMenuDemo() {
     </NavigationMenu>
   );
 }
-
-
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
   ({ className, title, children, href = "", ...props }, ref) => {
