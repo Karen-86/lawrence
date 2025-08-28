@@ -94,7 +94,7 @@ const PartnersSection = () => {
     <section className="partners bg-[rgb(252,252,252)] !pb-[4.5rem] !pt-[3rem]" id="partners">
       <div className="container">
         <h2 className="subtitle text-center !mb-[4.5rem]">Our fabric partners</h2>
-        <div className="font-baskervville flex gap-15 xl:gap-10 flex-wrap  justify-center xl:justify-between mx-auto mb-[2.8rem] sm:mb-[4.5rem]">
+        <div className="font-baskervville flex gap-15 xl:gap-10 flex-wrap  justify-center  xl:justify-between mx-auto mb-[2.8rem] sm:mb-[4.5rem]">
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample1Image} alt="" />
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample2Image} alt="" />
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample3Image} alt="" />
