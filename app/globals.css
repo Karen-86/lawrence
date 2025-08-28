@@ -272,3 +272,7 @@ h6 {
 [data-transformed].lazy-animate {
   transform: translateY(-50%) !important;
 }
+
+main {
+  min-height: 100vh;
+}

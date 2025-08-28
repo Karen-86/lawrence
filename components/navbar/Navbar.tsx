@@ -97,12 +97,12 @@ export default function Navbar() {
               <div className="link text-xs font-medium px-1">Weddings</div>
             </div>
 
-            <a
-              href="#/"
+            <Link
+              href="/booking"
               className="px-2 flex md:hidden font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black"
             >
               Book a Fitting
-            </a>
+            </Link>
           </div>
         </div>
         <hr className="border-secondary-100" />

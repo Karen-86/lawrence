@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat, Baskervville } from "next/font/google";
 import "../styles/index.css";
 import Provider from "@/context";
+import { Navbar, Footer } from "@/components/index";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -78,8 +79,12 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${baskervville.variable} ${montserrat.variable}  antialiased`}
           >
-          <Provider>
+        <Provider>
+                <header className="absolute w-full">
+        <Navbar />
+      </header>
           {children}
+           <Footer />
     </Provider>
         </body>
       </html>

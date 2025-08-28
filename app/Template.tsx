@@ -26,16 +26,19 @@ const {
 
   testimonialSample1Image,
   testimonialSample2Image,
+
+  partnersSample1Image,
+  partnersSample2Image,
+  partnersSample3Image,
+  partnersSample4Image,
+  partnersSample5Image,
+  partnersSample6Image,
 } = localData.images;
 
 const { precisionIcon, consultationIcon, fabricsIcon, bookingIcon } = localData.svgs;
 
 const Template = () => {
   return (
-    <>
-      <header className="absolute w-full">
-        <Navbar />
-      </header>
       <main className="home-page">
         <HeroSection />
         <PartnersSection />
@@ -46,8 +49,6 @@ const Template = () => {
         <BespokeSection />
         <TestimonialsSection />
       </main>
-      <Footer />
-    </>
   );
 };
 
@@ -94,11 +95,13 @@ const PartnersSection = () => {
       <div className="container">
         <h2 className="subtitle text-center">Our fabric partners</h2>
         <ul className="font-baskervville flex gap-y-5 gap-x-5 sm:gap-x-17 flex-wrap justify-center mx-auto mb-[2.8rem] sm:mb-[4.5rem]">
-          <li className="sm:text-[1.4rem] 4xl:text-lg text-secondary uppercase leading-[1.7]">Holland & Sherry</li>
-          <li className="sm:text-[1.4rem] 4xl:text-lg text-secondary uppercase leading-[1.7]">Scabal</li>
-          <li className="sm:text-[1.4rem] 4xl:text-lg text-secondary uppercase leading-[1.7]">Huddersfield Fine Worsteds</li>
-          <li className="sm:text-[1.4rem] 4xl:text-lg text-secondary uppercase leading-[1.7]">Dormeuil</li>
-          <li className="sm:text-[1.4rem] 4xl:text-lg text-secondary uppercase leading-[1.7]">Loro Piana</li>
+          <li className=""><img src={partnersSample1Image} alt="" /></li>
+          <li className=""><img src={partnersSample2Image} alt="" /></li>
+          <li className=""><img src={partnersSample3Image} alt="" /></li>
+          <li className=""><img src={partnersSample4Image} alt="" /></li>
+          <li className=""><img src={partnersSample5Image} alt="" /></li>
+          <li className=""><img src={partnersSample6Image} alt="" /></li>
+         
         </ul>
         <div className="flex justify-center">
           <CustomLink text="VIEW ALL" className="" />

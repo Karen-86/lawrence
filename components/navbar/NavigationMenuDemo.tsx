@@ -57,9 +57,9 @@ export function NavigationMenuDemo() {
         <Link href={"#contact"} className="font-medium px-2 block hover:text-secondary">
           <div className={pathname == "contact" ? "text-success focus:text-success" : ""}>Contact</div>
         </Link>
-        <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
+        <Link href="/booking" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
           Book a fitting
-        </a>
+        </Link>
       </div>
       {/* <div className="brand">LAWRENCE & WINSLADE</div> */}
     </NavigationMenu>
