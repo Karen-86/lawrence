@@ -42,6 +42,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [height, setHeight] = useState("");
   const navbar = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!navbar.current) return;
@@ -49,7 +50,7 @@ export default function Navbar() {
   }, [navbar]);
 
   return (
-    <nav className="navbar  pt-8 lg:pt-10 rela" ref={navbar}>
+    <nav className="navbar  pt-8  lg:pt-10  " ref={navbar}>
       <div className="top-panel flex items-center justify-center xl:justify-start  gap-7 absolute top-0 z-3 left-0 bg-success w-full rounded-bl-[30px] rounded-br-[30px] px-[10px] py-[10px] ">
         <p className="xl:ml-[15rem] hidden md:block text-white text-xs font-normal">
           Visit our London showroom for expert tailoring and fabric selection
@@ -100,6 +101,7 @@ export default function Navbar() {
             <Link
               href="/booking"
               className="px-2 flex md:hidden font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black"
+              onClick={()=>setIsMenuOpen(false)}
             >
               Book a Fitting
             </Link>
@@ -110,7 +112,7 @@ export default function Navbar() {
         <div className="container">
           <NavigationMenuDemo />
           <div className="flex items-center justify-between gap-3 lg:hidden pt-4 pb-4 lg:pb-0 lg:pt-2 ">
-            {logoSm}
+            <a href="/">{logoSm}</a>
             {/* <SidebarNavigationMenuDemo /> */}
 
             <Button
@@ -125,7 +127,22 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
       <Menu isMenuOpen={isMenuOpen} height={height} />
+
+      {pathname == "/booking" ? (
+        <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
+          <div className="container flex items-center gap-2">
+            <Link href="/" className="link text-xs font-medium px-1 underline">
+              Home
+            </Link>
+            <div className="dot w-1 h-1 rounded-full bg-dark"></div>
+            <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">Booking</div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </nav>
   );
 }
@@ -133,7 +150,7 @@ export default function Navbar() {
 const Menu = ({ isMenuOpen = false, height = "" }) => {
   useLockBodyScroll(isMenuOpen);
   const pathname = usePathname();
-  console.log(height)
+
   return (
     <div className="relative z-1">
       <div

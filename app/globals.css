@@ -276,3 +276,7 @@ h6 {
 main {
   min-height: 100vh;
 }
+
+.display-2 {
+  @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[3.438rem]
+}
