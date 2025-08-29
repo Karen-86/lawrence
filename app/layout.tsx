@@ -79,9 +79,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${baskervville.variable} ${montserrat.variable}  antialiased`}
       >
         <Provider>
-          <header className="absolute w-full z-999">
-            <Navbar />
-          </header>
+            
           {children}
           <Footer />
         </Provider>

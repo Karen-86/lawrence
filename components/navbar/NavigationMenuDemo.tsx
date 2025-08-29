@@ -24,7 +24,7 @@ export function NavigationMenuDemo() {
   const pathname = usePathname();
 
   return (
-    <NavigationMenu className={`hidden lg:flex navigation-menu pt-10 pb-10 min-w-full justify-between`} delayDuration={0}>
+    <NavigationMenu className={`hidden lg:flex navigation-menu pt-6 pb-6 4xl:pt-10 4xl:pb-10 min-w-full justify-between`} delayDuration={0}>
       <div className="flex items-center">
         <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
           Shop

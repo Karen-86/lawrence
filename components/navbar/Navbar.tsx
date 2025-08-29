@@ -38,7 +38,7 @@ export const dropdownLinksModules: { title: string; href: string; description: s
   },
 ];
 
-export default function Navbar() {
+export default function Navbar({children = null}:any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [height, setHeight] = useState("");
   const navbar = useRef<HTMLDivElement>(null);
@@ -101,7 +101,7 @@ export default function Navbar() {
             <Link
               href="/booking"
               className="px-2 flex md:hidden font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black"
-              onClick={()=>setIsMenuOpen(false)}
+              onClick={() => setIsMenuOpen(false)}
             >
               Book a Fitting
             </Link>
@@ -130,19 +130,8 @@ export default function Navbar() {
 
       <Menu isMenuOpen={isMenuOpen} height={height} />
 
-      {pathname == "/booking" ? (
-        <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
-          <div className="container flex items-center gap-2">
-            <Link href="/" className="link text-xs font-medium px-1 underline">
-              Home
-            </Link>
-            <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-            <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">Booking</div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
+      {children}
+ 
     </nav>
   );
 }

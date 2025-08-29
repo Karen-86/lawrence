@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { InlineWidget, PopupButton } from "react-calendly";
 import type { Metadata } from "next";
+import { Navbar } from "@/components/index";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Booking",
@@ -10,11 +12,22 @@ export const metadata: Metadata = {
 };
 
 const Template = () => {
-  const [loading, setLoading] = useState(true);
-
   return (
     <main className="booking-page">
-      <section className="!pt-[15.5rem] sm:!pt-[24.5rem] !pb-[15rem] sm:!pb-[15rem]">
+      <header className="hero">
+        <Navbar>
+          <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
+            <div className="container flex items-center gap-2">
+              <Link href="/" className="link text-xs font-medium px-1 underline">
+                Home
+              </Link>
+              <div className="dot w-1 h-1 rounded-full bg-dark"></div>
+              <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">Booking</div>
+            </div>
+          </div>
+        </Navbar>
+      </header>
+      <section className=" !pb-[1rem] sm:!pb-[6rem] sm:!pt-[6rem] lg:!pt-[5rem] 4xl:!pt-[13rem]">
         <div className="container">
           <h6 className="subtitle text-center sm:!mb-[5.2rem]">book a fitting</h6>
           <h1 className="display-2 text-center leading-[1.1] mb-[1.7rem] sm:mb-[3rem]">
@@ -25,7 +38,7 @@ const Template = () => {
           <div className="text-secondary-800 text-sm sm:text-[1.125rem] max-w-[300px] text-center mx-auto mb-[2rem] leading-[1.65]">
             Begin your tailoring journey with Lawrence & Winslade
           </div>
-          <div className=" h-[900px]  md:h-[900px] xl:h-[700px] relative">
+          <div className=" h-[900px]  md:h-[900px] xl:h-[660px] relative mb-0">
             <InlineWidget
               url="https://calendly.com/karendev99test/30min"
               className="relative z-2"

@@ -2,6 +2,7 @@ const images = {
   logo: "/assets/images/logo.png",
   exampleImage: "/assets/images/example.png",
   heroCoverImage: "/assets/images/rest/hero-cover.png",
+  fabricsCoverImage: "/assets/images/rest/fabrics/fabrics-cover.png",
   bespokeCoverImage: "/assets/images/rest/bespoke-cover.png",
   signIcon: "/assets/images/icons/sign.png",
 

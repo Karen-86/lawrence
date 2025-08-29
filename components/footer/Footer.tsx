@@ -12,7 +12,7 @@ const Footer = () => {
   const [inView1, setIsInView1] = useState(false);
 
   return (
-    <footer className="bg-[rgba(16,16,16)] text-white  py-[2rem]">
+    <footer className="bg-[rgba(16,16,16)] text-white  py-[2rem] mt-[13rem]">
       <motion.div
         className={`absolute  w-full banner bg-[rgba(16,16,16)] rounded-[7rem] sm:rounded-full transform-[translateY(-50%)] p-3 sm:p-7
         ${inView1 ? "lazy-animate" : ""}`}

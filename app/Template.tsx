@@ -39,23 +39,28 @@ const { precisionIcon, consultationIcon, fabricsIcon, bookingIcon } = localData.
 
 const Template = () => {
   return (
-      <main className="home-page">
-        <HeroSection />
-        <PartnersSection />
-        <FeaturedWorkSection />
-        {/* <hr className="border-line" /> */}
-        <ServicesSection />
-        <DifferenceSection />
-        <BespokeSection />
-        <TestimonialsSection />
-      </main>
+    <main className="home-page">
+      <header className="hero  sm:min-h-[100vh] flex flex-col">
+        <Navbar />
+        <ShowcaseSection />
+      </header>
+
+      <PartnersSection />
+      <FeaturedWorkSection />
+      {/* <hr className="border-line" /> */}
+      <ServicesSection />
+      <DifferenceSection />
+      <BespokeSection />
+      <TestimonialsSection />
+    </main>
   );
 };
 
-const HeroSection = () => {
+const ShowcaseSection = () => {
   const [inView1, setIsInView1] = useState(false);
+
   return (
-    <header className="hero sm:min-h-[100vh] pt-[140px] lg:pt-[190px] bg-[rgb(252,252,252)] py-[2rem]  flex flex-col items-center">
+    <div className="showcase flex-1 bg-[rgb(252,252,252)] pb-[2rem]  flex flex-col items-center">
       <motion.div
         className={`flex-1 hero-center  bg-cover w-full relative flex items-end py-[8rem] sm:py-[4rem] 4xl:py-[8rem]  ${
           inView1 ? "lazy-animate" : ""
@@ -77,7 +82,7 @@ const HeroSection = () => {
         <div className="container   relative flex gap-10 flex-col lg:flex-row items-center sm:items-start lg:items-center justify-center lg:justify-between">
           <div className="hero-content text-white text-center sm:text-left">
             <div className="text-[0.625rem] sm:text-sm uppercase mb-[2rem]">Since 2011</div>
-            <h1 className="text-[2.188rem] leading-[1.3] sm:text-4xl max-w-[300px] sm:max-w-none">
+            <h1 className="text-[2.188rem] leading-[1.2] sm:text-4xl max-w-[300px] sm:max-w-none">
               Bespoke tailoring,
               <br /> crafted exclusively for you
             </h1>
@@ -85,7 +90,7 @@ const HeroSection = () => {
           <ButtonDemo text="Book a Fitting" className="" />
         </div>
       </motion.div>
-    </header>
+    </div>
   );
 };
 
@@ -101,7 +106,6 @@ const PartnersSection = () => {
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample4Image} alt="" />
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample5Image} alt="" />
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample6Image} alt="" />
-         
         </div>
         <div className="flex justify-center">
           <CustomLink text="VIEW ALL" className="" />
@@ -388,7 +392,7 @@ const BespokeSection = () => {
 
 const TestimonialsSection = () => {
   return (
-    <section className="testimonials !pb-[19rem] xl:!pb-[25rem] 4xl:!pb-[30rem]" id="testimonials">
+    <section className="testimonials " id="testimonials">
       <div className=" sm:px-[45px]">
         <h2 className="subtitle text-center">TESTIMONIALS</h2>
 
