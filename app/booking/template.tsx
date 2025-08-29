@@ -38,20 +38,7 @@ const Template = () => {
           <div className="text-secondary-800 text-sm sm:text-[1.125rem] max-w-[300px] text-center mx-auto mb-[2rem] leading-[1.65]">
             Begin your tailoring journey with Lawrence & Winslade
           </div>
-          <div className=" h-[900px]  md:h-[900px] xl:h-[660px] relative mb-0">
-            <InlineWidget
-              url="https://calendly.com/karendev99test/30min"
-              className="relative z-2"
-              styles={{ width: "100%", height: "100%", minHeight: "500px" }}
-              // pageSettings={{ hideLandingPageDetails: true }}
-              // prefill={{}}
-            />
-            {/* {loading && (
-            <div className="absolute top-[50%] z-1 left-[50%] transform-[translate(-50%,-50%)] flex justify-center items-center bg-white">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-            </div>
-          )} */}
-          </div>
+    
         </div>
       </section>
       
