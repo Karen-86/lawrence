@@ -5,4 +5,4 @@ const page = () => {
   return <Template/>
 }
 
-export default page
+export default page;
