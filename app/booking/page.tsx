@@ -2,7 +2,9 @@ import React from 'react'
 import Template from './Template'
 
 const page = () => {
-  return <Template/>
+  
+  return <Template />
+  
 }
 
 export default page;
