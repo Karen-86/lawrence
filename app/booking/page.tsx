@@ -1,10 +1,8 @@
-import React from 'react'
-import Template from './Template'
+import React from "react";
+import Template from "./BookingTemplate";
 
 const page = () => {
-
-  return <Template />
-  
-}
+  return <Template />;
+};
 
 export default page;
