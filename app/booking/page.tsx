@@ -1,5 +1,5 @@
 import React from 'react'
-import Template from '@/app/booking/Template'
+import Template from './Template'
 
 const page = () => {
   return <Template/>
