@@ -4,6 +4,7 @@ const images = {
   heroCoverImage: "/assets/images/rest/hero-cover.png",
   fabricsCoverImage: "/assets/images/rest/fabrics/fabrics-cover.png",
   bespokeCoverImage: "/assets/images/rest/bespoke-cover.png",
+  fabricDecorativeCoverImage: "/assets/images/rest/fabrics/decorative-cover.png",
   signIcon: "/assets/images/icons/sign.png",
 
   // services
@@ -31,6 +32,14 @@ const images = {
   partnersSample4Image: "/assets/images/rest/partners/image-4.png",
   partnersSample5Image: "/assets/images/rest/partners/image-5.png",
   partnersSample6Image: "/assets/images/rest/partners/image-6.png",
+
+  // fabrics
+  fabricsSample1Image: "/assets/images/rest/fabrics/catalog/image-1.png",
+  fabricsSample2Image: "/assets/images/rest/fabrics/catalog/image-2.png",
+  fabricsSample3Image: "/assets/images/rest/fabrics/catalog/image-3.png",
+  fabricsSample4Image: "/assets/images/rest/fabrics/catalog/image-4.png",
+  fabricsSample5Image: "/assets/images/rest/fabrics/catalog/image-5.png",
+  fabricsSample6Image: "/assets/images/rest/fabrics/catalog/image-6.png",
 };
 
 const localData = {

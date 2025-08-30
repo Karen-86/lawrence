@@ -237,9 +237,7 @@ h6 {
   font-family: var(--font-baskervville);
 }
 
-.subtitle {
-  @apply  font-montserrat uppercase text-xs sm:text-sm text-secondary-400 font-medium tracking-[1px] mb-[2.5rem] sm:mb-[3.2rem];
-}
+
 
 /* LAZY LOAD */
 [data-lazy] {
@@ -278,5 +276,17 @@ main {
 }
 
 .display-2 {
-  @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[3.438rem]
+  @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[2.8rem] xl:text-[3.438rem] leading-[1.1];
+}
+
+.custom-link {
+  @apply px-2 flex  font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black;
+}
+
+.paragraph-1 {
+  @apply text-sm sm:text-[1.125rem] text-secondary-800 leading-[1.7];
+}
+
+.subtitle {
+  @apply  font-montserrat uppercase text-xs sm:text-sm text-secondary-400 font-medium tracking-[1px] mb-[2.5rem] sm:mb-[3.2rem];
 }

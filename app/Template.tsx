@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { Navbar, Footer } from "@/components/index.js";
-import { ButtonDemo, CustomLink, CarouselDemo, ServiceCard, DifferenceCard } from "@/components/index.js";
+import { ButtonDemo, CarouselDemo, ServiceCard, DifferenceCard } from "@/components/index.js";
 import localData from "@/localData";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import Link from "next/link";
 
 const {
   heroCoverImage,
@@ -40,7 +41,7 @@ const { precisionIcon, consultationIcon, fabricsIcon, bookingIcon } = localData.
 const Template = () => {
   return (
     <main className="home-page">
-      <header className="hero  sm:min-h-[100vh] flex flex-col">
+      <header className="hero  min-h-[100vh] flex flex-col">
         <Navbar />
         <ShowcaseSection />
       </header>
@@ -108,7 +109,9 @@ const PartnersSection = () => {
           <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample6Image} alt="" />
         </div>
         <div className="flex justify-center">
-          <CustomLink text="VIEW ALL" className="" />
+          <Link href="/fabrics" className="custom-link">
+            VIEW ALL
+          </Link>
         </div>
       </div>
     </section>
