@@ -24,10 +24,10 @@ const Footer = () => {
         <div className="solid-line border border-[rgba(255,255,255,0.2)] p-3 sm:p-4 rounded-[7rem] sm:rounded-full">
           <div className="dotted-line border border-[rgba(255,255,255,0.2)] border-dashed  rounded-[7rem] sm:rounded-full">
             <div className="banner-content flex flex-col items-center py-23 sm:py-15 4xl:py-26">
-              <div className="banner-icon mb-[2rem] sm:mb-[3.2rem]">
+              <div className="banner-icon mb-[2rem] sm:mb-[3rem]">
                 <img src={signIcon} alt="" />
               </div>
-              <h2 className="banner-title text-[1.563rem] sm:text-[2rem] 4xl:text-[2.813rem] max-w-[255px] sm:max-w-[400px] 4xl:max-w-[550px] text-center leading-[1.4] sm:leading-[1.1] mb-[3rem] sm:mb-[3rem] 4xl:mb-[4.6rem]">
+              <h2 className="banner-title text-[1.563rem] sm:text-[2rem] 4xl:text-[2.813rem] max-w-[255px] sm:max-w-[400px] 4xl:max-w-[550px] text-center leading-[1.4] mb-[2.7rem] 4xl:mb-[4rem]">
                 Start your journey to a suit made just for you
               </h2>
               <ButtonDemo text="Book Your Fitting Now " className="sm:!min-w-[290px]" />

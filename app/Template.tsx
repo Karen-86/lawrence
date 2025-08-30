@@ -456,7 +456,9 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="flex justify-center mt-15 sm:mt-20">
+          <Link href='/testimonials'>
           <ButtonDemo text="view more" className=" border border-secondary-100 !min-w-[280px]" />
+          </Link>
         </div>
       </div>
     </section>

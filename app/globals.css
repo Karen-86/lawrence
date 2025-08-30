@@ -278,6 +278,9 @@ main {
 .display-2 {
   @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[2.8rem] xl:text-[3.438rem] leading-[1.1];
 }
+.display-3 {
+  @apply  text-[1.563rem] sm:text-[2rem] 4xl:text-[2.813rem]  text-center leading-[1.4] mb-[2.7rem] 4xl:mb-[4rem];
+}
 
 .custom-link {
   @apply px-2 flex  font-medium text-xs sm:text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black;

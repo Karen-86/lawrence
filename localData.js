@@ -5,7 +5,10 @@ const images = {
   fabricsCoverImage: "/assets/images/rest/fabrics/fabrics-cover.png",
   bespokeCoverImage: "/assets/images/rest/bespoke-cover.png",
   fabricDecorativeCoverImage: "/assets/images/rest/fabrics/decorative-cover.png",
+  followUsDecorativeCoverImage: "/assets/images/rest/follow-us-decorative-cover.png",
   signIcon: "/assets/images/icons/sign.png",
+  mobileBannerSignImage: "/assets/images/rest/mobile-banner-sign.png",
+  bannerSignImage: "/assets/images/rest/banner-sign.png",
 
   // services
   serviceSample1Image: "/assets/images/rest/services/sample-1.png",
@@ -24,6 +27,8 @@ const images = {
   // testimonials
   testimonialSample1Image: "/assets/images/rest/testimonials/sample-1.png",
   testimonialSample2Image: "/assets/images/rest/testimonials/sample-2.png",
+  testimonialSample3Image: "/assets/images/rest/testimonials/sample-3.png",
+  testimonialSample4Image: "/assets/images/rest/testimonials/sample-4.png",
 
   // partners
   partnersSample1Image: "/assets/images/rest/partners/image-1.png",
