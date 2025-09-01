@@ -53,6 +53,11 @@ const images = {
   // journal
   journalSample1Image: "/assets/images/rest/journal/image-1.png",
   journalSample2Image: "/assets/images/rest/journal/image-2.png",
+  journalSample3Image: "/assets/images/rest/journal/image-3.png",
+  journalSample4Image: "/assets/images/rest/journal/image-4.png",
+  journalSample5Image: "/assets/images/rest/journal/image-5.png",
+  journalSample6Image: "/assets/images/rest/journal/image-6.png",
+  journalSample7Image: "/assets/images/rest/journal/image-7.png",
 };
 
 const localData = {

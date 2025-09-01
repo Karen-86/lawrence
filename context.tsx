@@ -14,6 +14,11 @@ const {
 
   journalSample1Image,
   journalSample2Image,
+  journalSample3Image,
+  journalSample4Image,
+  journalSample5Image,
+  journalSample6Image,
+  journalSample7Image,
 } = localData.images;
 
 type StateType = {
@@ -38,11 +43,50 @@ export default function Provider({
 
   const actionCards = [
     {
-      title: 'Suit Essentials',
+      title: 'The Art of the Suit',
       suptitle: 'Article',
       image: journalSample2Image,
       isFavourite: false
     },
+    {
+      title: 'All About Suits',
+      suptitle: 'Article',
+      image: journalSample3Image,
+      isFavourite: false
+    },
+    {
+      title: 'Tailoring Explained',
+      suptitle: 'Article',
+      image: journalSample4Image,
+      isFavourite: false
+    },
+    {
+      title: 'Mastering the Suit',
+      suptitle: 'Article',
+      image: journalSample5Image,
+      isFavourite: false
+    },
+    {
+      title: 'Suit Up',
+      suptitle: 'Article',
+      image: journalSample6Image,
+      isFavourite: false
+    },
+    {
+      title: 'Suit Basics',
+      suptitle: 'Article',
+      image: journalSample7Image,
+      isFavourite: false
+    },
+
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+
+
   ]
 
   return (

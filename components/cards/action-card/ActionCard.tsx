@@ -50,7 +50,7 @@ const ActionCard = ({ image = "", title = "", suptitle = "", isFavourite = false
         </div>
       </div>
       <Image src={image} fill={true} alt="image" className="absolute top-0 left-0 w-full h-full object-cover" />
-      <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
+      <div className="card-content px-3 absolute top-1/2 -translate-y-1/2 w-full">
         <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">{suptitle}</div>
         <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">{title}</h3>
       </div>
