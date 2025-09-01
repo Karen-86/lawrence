@@ -6,6 +6,7 @@ import localData from "@/localData";
 import { ButtonDemo, Navbar } from "@/components/index";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { motion } from "framer-motion";
 
 const {
   testimonialSample1Image,
@@ -43,6 +44,11 @@ const Template = () => {
 };
 
 const TestimonialsCatalogSection = () => {
+  const [inView1, setIsInView1] = useState(false);
+  const [inView2, setIsInView2] = useState(false);
+  const [inView3, setIsInView3] = useState(false);
+  const [inView4, setIsInView4] = useState(false);
+
   return (
     <section className="xl:!pt-[7rem] 4xl:!pt-[9rem] !pb-0">
       <div className="sm:px-[45px]">
@@ -67,14 +73,21 @@ const TestimonialsCatalogSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- James R., London</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView1 ? "lazy-animate" : ""
+            }`}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView1(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample1Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem] sm:mb-[2rem]">
@@ -95,14 +108,21 @@ const TestimonialsCatalogSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- Alexander M., Manchester</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView2 ? "lazy-animate" : ""
+            }`}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView2(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample2Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem] sm:mb-[2rem]">
@@ -123,14 +143,21 @@ const TestimonialsCatalogSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- James R., London</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView3 ? "lazy-animate" : ""
+            }`}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView3(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample3Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem]">
@@ -151,14 +178,21 @@ const TestimonialsCatalogSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- Alexander M., Manchester</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView4 ? "lazy-animate" : ""
+            }`}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView4(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample4Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -192,19 +226,28 @@ const BannerSection = () => {
 };
 
 const FollowUsSection = () => {
+  const [inView1, setIsInView1] = useState(false);
+
   return (
     <section className="follow-us">
       <div className="container">
         <h6 className="subtitle text-center">follow us on instagram</h6>
       </div>
-      <div className="follow-us-cover relative min-h-[220px] sm:min-h-[400px] 4xl:min-h-[525px] mb-[2.5rem] sm:mb-[5rem]">
+      <motion.div
+        className={`follow-us-cover relative min-h-[220px] sm:min-h-[400px] 4xl:min-h-[525px] mb-[2.5rem] sm:mb-[5rem] ${
+          inView1 ? "lazy-animate" : ""
+        }`}
+        viewport={{ amount: 0.3 }}
+        onViewportEnter={() => setIsInView1(true)}
+        data-lazy="fade"
+      >
         <Image
           src={followUsDecorativeCoverImage}
           fill={true}
           alt="image"
           className="absolute top-0 left-0 w-full h-full object-cover"
         />
-      </div>
+      </motion.div>
       <div className="container flex justify-center">
         <ButtonDemo text="Follow" color="black" className="" />
       </div>

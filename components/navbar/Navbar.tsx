@@ -107,7 +107,7 @@ export default function Navbar({children = null}:any) {
             </Link>
           </div>
         </div>
-        <hr className="border-secondary-100" />
+        <hr className="border-line" />
 
         <div className="container">
           <NavigationMenuDemo />

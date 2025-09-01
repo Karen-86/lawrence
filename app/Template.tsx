@@ -48,7 +48,7 @@ const Template = () => {
 
       <PartnersSection />
       <FeaturedWorkSection />
-      {/* <hr className="border-line" /> */}
+      <hr className="border-line" />
       <ServicesSection />
       <DifferenceSection />
       <BespokeSection />
@@ -88,7 +88,9 @@ const ShowcaseSection = () => {
               <br /> crafted exclusively for you
             </h1>
           </div>
-          <ButtonDemo text="Book a Fitting" className="" />
+          <Link href="/booking">
+            <ButtonDemo text="Book a Fitting" className="" />
+          </Link>
         </div>
       </motion.div>
     </div>
@@ -128,7 +130,7 @@ const FeaturedWorkSection = () => {
       <div className="container">
         <h2 className="subtitle text-center sm:text-left">FEATURED WORK</h2>
 
-        <div className="grid md:grid-cols-2 gap-10 xl:gap-20  4xl:gap-35">
+        <div className="grid grid-cols-2 gap-[10px] xl:gap-[80px] 4xl:gap-[140px]">
           <motion.div
             className={`image-wrapper relative w-full h-0 pt-[116%] ${inView1 ? "lazy-animate" : ""} `}
             viewport={{ amount: 0.3 }}
@@ -154,10 +156,12 @@ const FeaturedWorkSection = () => {
               alt="image"
               className="absolute top-0 left-0 w-full h-full object-cover [object-position:85%]"
             />
-            <ButtonDemo
-              text="BOOK A FITTING"
-              className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
-            />
+            <Link href="/booking" className="hidden md:flex">
+              <ButtonDemo
+                text="BOOK A FITTING"
+                className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
+              />
+            </Link>
           </motion.div>
           <motion.div
             className={`image-wrapper relative w-full h-0 pt-[116%] ${inView3 ? "lazy-animate" : ""} `}
@@ -187,7 +191,9 @@ const FeaturedWorkSection = () => {
           </motion.div>
         </div>
         <div className="flex justify-center mt-15 sm:mt-20">
-          <ButtonDemo text="Explore the Gallery" className=" border border-secondary-100 !min-w-[280px]" />
+          <Link href="/gallery">
+            <ButtonDemo text="Explore the Gallery" className=" border border-secondary-100 !min-w-[280px]" />
+          </Link>
         </div>
       </div>
     </section>
@@ -231,7 +237,8 @@ const ServicesSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="services !pb-[0] sm:!pb-[3rem] !pt-[2rem] sm:!pt-[6rem] 4xl:!pt-[9rem]" id="services">
+    // <section className="services !pb-[0] sm:!pb-[3rem] !pt-[2rem] sm:!pt-[6rem] 4xl:!pt-[9rem]" id="services">
+    <section className="services !pb-[0] sm:!pb-[3rem]" id="services">
       <div className="container">
         <div className="max-w-[1160px] 4xl:max-w-full mx-auto">
           <CarouselDemo
@@ -330,7 +337,9 @@ const BespokeSection = () => {
               <h3 className="text-[2.188rem] 4xl:text-[3.2rem] text-white leading-[1.1] mb-[4rem] 4xl:mb-[6rem]">
                 From consultation to craftsmanship, experience the journey of creating your perfect suit
               </h3>
-              <ButtonDemo text="Book a Fitting" className="" />
+              <Link href="/booking">
+                <ButtonDemo text="Book a Fitting" className="" />
+              </Link>
             </div>
 
             <div className={`grid gap-10 justify-center w-full `}>
@@ -394,6 +403,9 @@ const BespokeSection = () => {
 };
 
 const TestimonialsSection = () => {
+  const [inView1, setIsInView1] = useState(false);
+  const [inView2, setIsInView2] = useState(false);
+
   return (
     <section className="testimonials " id="testimonials">
       <div className=" sm:px-[45px]">
@@ -417,14 +429,21 @@ const TestimonialsSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- James R., London</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView1 ? "lazy-animate" : ""
+            } `}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView1(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample1Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem]">
@@ -445,19 +464,26 @@ const TestimonialsSection = () => {
               <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- Alexander M., Manchester</div>
             </div>
           </div>
-          <div className="testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%]">
+          <motion.div
+            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
+              inView2 ? "lazy-animate" : ""
+            } `}
+            viewport={{ amount: 0.3 }}
+            onViewportEnter={() => setIsInView2(true)}
+            data-lazy="fade"
+          >
             <Image
               src={testimonialSample2Image}
               fill={true}
               alt="background image"
               className="absolute top-0 left-0 w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="flex justify-center mt-15 sm:mt-20">
-          <Link href='/testimonials'>
-          <ButtonDemo text="view more" className=" border border-secondary-100 !min-w-[280px]" />
+          <Link href="/testimonials">
+            <ButtonDemo text="view more" className=" border border-secondary-100 !min-w-[280px]" />
           </Link>
         </div>
       </div>

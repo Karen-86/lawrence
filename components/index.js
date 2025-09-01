@@ -5,4 +5,7 @@ export { AccordionDemo } from "./accordion/AccordionDemo.tsx";
 export { CarouselDemo } from "./carousel/CarouselDemo.tsx";
 export { default as Footer } from "./footer/Footer.tsx";
 export { default as ServiceCard } from "./cards/service-card/ServiceCard.tsx";
+export { default as AboutCard } from "./cards/about-card/AboutCard.tsx";
 export { default as DifferenceCard } from "./cards/difference-card/DifferenceCard.tsx";
+export { default as ActionCard } from "./cards/action-card/ActionCard.tsx";
+export { TooltipDemo } from "./tooltip/TooltipDemo.tsx";

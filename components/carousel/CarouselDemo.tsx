@@ -25,7 +25,9 @@ type CarouselDemoProps = {
   align?: "start" | "center";
   autoplay?: boolean;
   noAngles?: boolean;
+  noLine?: boolean;
   items?: any;
+  customAngles?: any;
   children: (props: { item: { [key: string]: string | number | (() => void) }; index: number }) => ReactNode;
 };
 
@@ -40,7 +42,9 @@ export function CarouselDemo({
   align = "start",
   autoplay = false,
   noAngles = false,
+  noLine = false,
   items = [{}, {}, {}, {}],
+  customAngles = null,
   children = () => "",
 }: CarouselDemoProps) {
   const carouselRef = useRef(null);
@@ -67,7 +71,6 @@ export function CarouselDemo({
       console.log("trigger");
       updateProgress();
     });
-    
   }, [api]);
 
   return (
@@ -78,18 +81,21 @@ export function CarouselDemo({
       opts={{
         align: align,
         loop: loop,
-         duration: 40
+        duration: 40,
       }}
       orientation={orientation}
-      plugins={autoplay ? [Autoplay({ delay: 4000, stopOnInteraction: true, })] : []}
+      plugins={autoplay ? [Autoplay({ delay: 4000, stopOnInteraction: true })] : []}
     >
       <CarouselContent className={`-ml-1 ${contentClassName} `}>
-        {items.map((item:any, index:any) => (
+        {items.map((item: any, index: any) => (
           <CarouselItem key={index} className={`pl-1 ${itemClassName}`}>
             <div className="p-1">{children({ item, index })}</div>
           </CarouselItem>
         ))}
       </CarouselContent>
+
+
+      {customAngles}
 
       {/* Navigation Arrows */}
       {!noAngles && (
@@ -102,16 +108,20 @@ export function CarouselDemo({
       )}
 
       {/* Progress Line */}
-      <div className={`absolute bottom-[-70px] xl:bottom-[-100px] w-full line flex  items-center gap-3 text-[1.125rem] font-medium ${lineClassName}`}>
-        <div className=" w-full h-[2px] bg-gray-200  ">
-          <div className="h-full bg-secondary transition-all duration-500  " style={{ width: `${progress}%` }} />
+      {!noLine && (
+        <div
+          className={`absolute bottom-[-70px] xl:bottom-[-100px] w-full line flex  items-center gap-3 text-[1.125rem] font-medium ${lineClassName}`}
+        >
+          <div className=" w-full h-[2px] bg-gray-200  ">
+            <div className="h-full bg-secondary transition-all duration-500  " style={{ width: `${progress}%` }} />
+          </div>
+          <div className="">
+            {/* {Math.ceil(progress / 33.33) - 1} */}
+            {api ? api.selectedScrollSnap() + 1 : 1}
+            <span className="text-[rgba(45,45,45,0.6)] ">/{items.length}</span>
+          </div>
         </div>
-        <div className="">
-          {/* {Math.ceil(progress / 33.33) - 1} */}
-          {api ? api.selectedScrollSnap() + 1 : 1}
-          <span className="text-[rgba(45,45,45,0.6)] ">/{items.length}</span>
-        </div>
-      </div>
+      )}
     </Carousel>
   );
 }

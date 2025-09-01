@@ -218,7 +218,7 @@ main {
 }
 
 main > section {
-  @apply py-[6rem] xl:py-[9rem] 4xl:py-[13rem];
+  @apply py-[3.75rem] sm:py-[9rem] 4xl:py-[13rem];
 }
 
 h1,
@@ -276,10 +276,13 @@ main {
 }
 
 .display-2 {
-  @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[2.8rem] xl:text-[3.438rem] leading-[1.1];
+  @apply text-[rgba(45,45,45,45,1)] text-[2.188rem] sm:text-[2.8rem] 4xl:text-[3.438rem] leading-[1.1];
 }
 .display-3 {
   @apply  text-[1.563rem] sm:text-[2rem] 4xl:text-[2.813rem]  text-center leading-[1.4] mb-[2.7rem] 4xl:mb-[4rem];
+}
+.display-4 {
+  @apply  text-[1.313rem] sm:text-[1.8rem] 4xl:text-[2.188rem] leading-[1.4] mb-[1rem] sm:mb-[2rem] 4xl:mb-[3.125rem];
 }
 
 .custom-link {
@@ -287,7 +290,11 @@ main {
 }
 
 .paragraph-1 {
-  @apply text-sm sm:text-[1.125rem] text-secondary-800 leading-[1.7];
+  @apply text-sm sm:text-md 4xl:text-[1.125rem] text-secondary-800 leading-[1.7];
+}
+
+.title {
+  @apply sm:text-[1.25rem] font-montserrat font-medium mb-[2.3rem];
 }
 
 .subtitle {

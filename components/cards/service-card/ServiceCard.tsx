@@ -5,6 +5,7 @@ import Image from "next/image";
 import localData from "@/localData";
 import { ButtonDemo } from "@/components/index";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const { serviceSample1Image } = localData.images;
 
@@ -31,9 +32,7 @@ const ServiceCard = ({
 
         <div>
           <h5 className="text-lg mb-[2rem]">{firstColTitle}</h5>
-          <p className="text-sm xl:text-md text-secondary leading-[1.7] font-light">
-            {firstColDescritpion}
-          </p>
+          <p className="text-sm xl:text-md text-secondary leading-[1.7] font-light">{firstColDescritpion}</p>
         </div>
       </div>
 
@@ -51,11 +50,13 @@ const ServiceCard = ({
             alt="image"
             data-lazy="fade"
           />
-          <ButtonDemo
-            text="BOOK A FITTING"
-            size="sm"
-            className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !py-[1.5rem] !text-white !text-[0.8rem] !min-w-[200px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
-          />
+          <Link href="/booking">
+            <ButtonDemo
+              text="BOOK A FITTING"
+              size="sm"
+              className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !py-[1.5rem] !text-white !text-[0.8rem] !min-w-[200px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
+            />
+          </Link>
         </div>
       </div>
 

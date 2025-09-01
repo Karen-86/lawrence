@@ -19,7 +19,7 @@ const buttonStyles = {
        black: "bg-dark hover:bg-black",
   },
   outline: {
-    defaultColor: "",
+    defaultColor: "bg-tranpsparent",
     green: "text-green-600 hover:text-green-600 border-green-200 hover:border-green-300 hover:bg-green-50",
     yellow:
       "text-yellow-600 hover:text-yellow-600 border-yellow-200 hover:border-yellow-300 hover:bg-yellow-50",

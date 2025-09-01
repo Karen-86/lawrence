@@ -51,7 +51,7 @@ export function NavigationMenuDemo() {
       <a href="/">{logo}</a>
 
       <div className="flex items-center">
-        <Link href={"#about"} className="font-medium px-2 block hover:text-secondary">
+        <Link href={"/about"} className="font-medium px-2 block hover:text-secondary">
           <div className={pathname == "about" ? "text-success focus:text-success" : ""}>About</div>
         </Link>
         <Link href={"#contact"} className="font-medium px-2 block hover:text-secondary">
