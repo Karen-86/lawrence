@@ -87,6 +87,66 @@ export default function Provider({
     },
 
 
+
+
+
+
+
+
+
+
+
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+    {
+      title: 'The Modern Suit',
+      suptitle: 'Article',
+      image: journalSample1Image,
+      isFavourite: false
+    },
+ 
+
+
   ]
 
   return (

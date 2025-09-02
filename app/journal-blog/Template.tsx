@@ -8,7 +8,8 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useGlobalContext } from "@/context";
 
-const { bespokeCoverImage, journalSample1Image, journalSample2Image } = localData.images;
+const { bespokeCoverImage, journalSample1Image, followUsDecorativeCoverImage } = localData.images;
+const { articleSignIcon } = localData.svgs;
 
 const Template = () => {
   return (
@@ -28,6 +29,8 @@ const Template = () => {
         <ShowcaseSection />
       </header>
       <JournalSection />
+      <hr className="border-line" />
+      <FollowUsSection />
     </main>
   );
 };
@@ -67,45 +70,93 @@ const JournalSection = () => {
   const { actionCards } = useGlobalContext();
   const [inView1, setIsInView1] = useState(false);
 
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCards = showAll ? actionCards : actionCards.slice(0, 7);
+
   return (
     <section>
       <div className="container">
         <div className=" lg:flex justify-between  lg:gap-50">
           <h3 className="subtitle text-center 4xl:!mb-[5rem]">Journal</h3>
-          <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px] flex-1">
-            <motion.div
-              className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
-              viewport={{ amount: 0.3 }}
-              onViewportEnter={() => setIsInView1(true)}
-              data-lazy="fade"
-            >
-              <Image
-                src={journalSample1Image}
-                fill={true}
-                alt="image"
-                className="absolute top-0 left-0 w-full h-full object-cover"
-              />
-              <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
-                <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
-                  Article
+          <div className="flex-1">
+            <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px]  mb-[5rem]">
+              <motion.div
+                className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
+                viewport={{ amount: 0.3 }}
+                onViewportEnter={() => setIsInView1(true)}
+                data-lazy="fade"
+              >
+                <Image
+                  src={journalSample1Image}
+                  fill={true}
+                  alt="image"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+                <div className="absolute bottom-[15%] right-[13%] hidden xl:block">{articleSignIcon}</div>
+                <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
+                  <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
+                    Article
+                  </div>
+                  <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">Suit Essentials</h3>
+                  <div className="flex justify-center">
+                    <Link href="/journal-blog/article" className="">
+                      <ButtonDemo
+                        text="view article"
+                        variant="outline"
+                        className=" border border-[rgba(255,255,255,0.5)] !text-white hover:!bg-[rgba(217,217,217,0.15)]"
+                      />
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">Suit Essentials</h3>
-                <div className="flex justify-center">
-                  <Link href="#/article-1" className="">
-                    <ButtonDemo
-                      text="view article"
-                      variant="outline"
-                      className=" border border-[rgba(255,255,255,0.5)] !text-white hover:!bg-[rgba(217,217,217,0.15)]"
-                    />
-                  </Link>
-                </div>
+              </motion.div>
+              {visibleCards.map((item: any, index: any) => {
+                return <ActionCard key={index} {...item} />;
+              })}
+            </div>
+            {!showAll && actionCards.length > 5 && (
+              <div className="flex justify-center">
+                <ButtonDemo
+                  onClick={() => setShowAll(true)}
+                  text={`View More (${actionCards.length - 7})`}
+                  className=" border border-secondary-100 !min-w-[280px]"
+                />
               </div>
-            </motion.div>
-            {actionCards.map((item: any, index: any) => {
-              return <ActionCard key={index} {...item} />;
-            })}
+            )}
           </div>
         </div>
+      </div>
+    </section>
+  );
+};
+
+const FollowUsSection = () => {
+  const [inView1, setIsInView1] = useState(false);
+
+  return (
+    <section className="follow-us">
+      <div className="container">
+        <h6 className="subtitle text-center">follow us on instagram</h6>
+      </div>
+      <motion.div
+        className={`follow-us-cover relative min-h-[220px] sm:min-h-[400px] 4xl:min-h-[525px] mb-[2.5rem] sm:mb-[5rem] ${
+          inView1 ? "lazy-animate" : ""
+        }`}
+        viewport={{ amount: 0.3 }}
+        onViewportEnter={() => setIsInView1(true)}
+        data-lazy="fade"
+      >
+        <Image
+          src={followUsDecorativeCoverImage}
+          fill={true}
+          alt="image"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+      </motion.div>
+      <div className="container flex justify-center">
+        <a href="https://www.instagram.com/lawrenceandwinslade" target="_blank">
+          <ButtonDemo text="Follow" color="black" className="" />
+        </a>
       </div>
     </section>
   );

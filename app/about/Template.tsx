@@ -22,12 +22,12 @@ const {
   journalSample2Image,
 } = localData.images;
 
-const { heartIcon, shareIcon } = localData.svgs;
+const {articleSignIcon} = localData.svgs
 
 const Template = () => {
   return (
     <main className="about-page">
-      <header className="hero   flex flex-col">
+      <header className="hero  min-h-[100vh] flex flex-col">
         <Navbar>
           <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
             <div className="container flex items-center gap-2">
@@ -39,8 +39,8 @@ const Template = () => {
             </div>
           </div>
         </Navbar>
+        <ShowcaseSection />
       </header>
-      <ShowcaseSection />
       <OurStorySection />
       <FeaturedWorkSection />
       <hr className="border-line" />
@@ -53,70 +53,125 @@ const Template = () => {
   );
 };
 
+// const ShowcaseSection = () => {
+//   const content = [
+//     {
+//       bigImage: aboutSample1Image,
+//       title: "Formal Bespoke",
+//       description: "Crafted for your style",
+//       snap: (
+//         <div className="tracking-[2px] ">
+//           1<span className="text-sm  ml-1">/</span>
+//           <span className="text-lg">1</span>
+//         </div>
+//       ),
+//     },
+//     {
+//       bigImage: aboutSample1Image,
+//       title: "Formal Bespoke",
+//       description: "Crafted for your style",
+//       snap: (
+//         <div className="tracking-[2px] ">
+//           1<span className="text-sm  ml-1">/</span>
+//           <span className="text-lg">2</span>
+//         </div>
+//       ),
+//     },
+//     {
+//       bigImage: aboutSample1Image,
+//       title: "Formal Bespoke",
+//       description: "Crafted for your style",
+//       snap: (
+//         <div className="tracking-[2px] ">
+//           1<span className="text-sm  ml-1">/</span>
+//           <span className="text-lg">3</span>
+//         </div>
+//       ),
+//     },
+//   ];
+//   return (
+//     <section className=" !pt-0 4xl:!pb-[8rem]">
+//       <div className="min-h-[100vh] flex-1 flex flex-col items-center">
+//         <div className={`flex flex-1  hero-center  bg-cover w-full relative`}>
+//           <CarouselDemo
+//             className="custom-carousel flex-1 flex flex-col w-full !mb-0 relative overflow-hidden"
+//             contentClassName="!-ml-0 absolute top-0 left-0 w-full h-full "
+//             itemClassName=" relative "
+//             noAngles={true}
+//             noLine={true}
+//             loop={true}
+//             anglesClassName=""
+//             items={content}
+//             lineClassName="!bottom-[-40px] sm:!bottom-[-70px]"
+//             customAngles={
+//               <div
+//                 className={`carousel-angles bottom-[65px] max-w-[0px] md:max-w-none md:top-0 md:h-full w-full absolute left-[50%] md:transform-[translateX(-50%)] pointer-events-none `}
+//               >
+//                 {/* <CarouselPrevious className="pointer-events-auto w-[70px] h-[70px]  transform-[rotateZ(180deg)] xl:top-[200px]  xl:left-[0px] cursor-pointer " /> */}
+//                 <CarouselNext className="pointer-events-auto w-[70px] h-[70px]   cursor-pointer absolute md:right-[280px] 4xl:right-[340px]  md:bottom-[-30px] md:top-auto " />
+//               </div>
+//             }
+//           >
+//             {({ item, index }) => <AboutCard {...item} index={index} />}
+//           </CarouselDemo>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
 const ShowcaseSection = () => {
-  const content = [
-    {
-      bigImage: aboutSample1Image,
-      title: "Formal Bespoke",
-      description: "Crafted for your style",
-      snap: (
-        <div className="tracking-[2px] ">
-          1<span className="text-sm  ml-1">/</span>
-          <span className="text-lg">1</span>
-        </div>
-      ),
-    },
-    {
-      bigImage: aboutSample1Image,
-      title: "Formal Bespoke",
-      description: "Crafted for your style",
-      snap: (
-        <div className="tracking-[2px] ">
-          1<span className="text-sm  ml-1">/</span>
-          <span className="text-lg">2</span>
-        </div>
-      ),
-    },
-    {
-      bigImage: aboutSample1Image,
-      title: "Formal Bespoke",
-      description: "Crafted for your style",
-      snap: (
-        <div className="tracking-[2px] ">
-          1<span className="text-sm  ml-1">/</span>
-          <span className="text-lg">3</span>
-        </div>
-      ),
-    },
-  ];
+  const [inView1, setIsInView1] = useState(false);
+
   return (
-    <section className=" !pt-0 4xl:!pb-[8rem]">
-      <div className="min-h-[100vh] flex-1 flex flex-col items-center">
-        <div className={`flex flex-1  hero-center  bg-cover w-full relative`}>
-          <CarouselDemo
-            className="custom-carousel flex-1 flex flex-col w-full !mb-0 relative overflow-hidden"
-            contentClassName="!-ml-0 absolute top-0 left-0 w-full h-full "
-            itemClassName=" relative "
-            noAngles={true}
-            noLine={true}
-            loop={true}
-            anglesClassName=""
-            items={content}
-            lineClassName="!bottom-[-40px] sm:!bottom-[-70px]"
-            customAngles={
-              <div
-                className={`carousel-angles bottom-[65px] max-w-[0px] md:max-w-none md:top-0 md:h-full w-full absolute left-[50%] md:transform-[translateX(-50%)] pointer-events-none `}
-              >
-                {/* <CarouselPrevious className="pointer-events-auto w-[70px] h-[70px]  transform-[rotateZ(180deg)] xl:top-[200px]  xl:left-[0px] cursor-pointer " /> */}
-                <CarouselNext className="pointer-events-auto w-[70px] h-[70px]   cursor-pointer absolute md:right-[280px] 4xl:right-[340px]  md:bottom-[-30px] md:top-auto " />
-              </div>
-            }
-          >
-            {({ item, index }) => <AboutCard {...item} index={index} />}
-          </CarouselDemo>
+    <div className="flex-1  pb-[2rem]  flex ">
+      <motion.div
+        className={`flex flex-2 xl:flex-1 border hero-center  bg-cover w-full relative  py-[8rem] sm:py-[4rem] 4xl:py-[8rem]  ${
+          inView1 ? "lazy-animate" : ""
+        } `}
+        viewport={{ amount: 0.3 }}
+        onViewportEnter={() => setIsInView1(true)}
+        data-lazy="fade"
+      >
+        <Image
+          src={aboutSample1Image}
+          fill={true}
+          alt="background image"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="overlay absolute bg-[rgba(0,0,0,0.3)] sm:hidden top-0 left-0 w-full h-full"></div>
+        <div className="container flex-1   relative flex gap-10 flex-col lg:flex-row items-center  justify-center ">
+          {/* <div className="showcase-content text-white text-center ">
+            <div className="text-[0.625rem] sm:text-sm uppercase mb-[2rem]">About Us</div>
+            <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">
+              Discover the world’s finest fabrics
+            </h1>
+          </div> */}
+
+          {/* <div className="lg:hidden content px-[50px] pt-[30px]  pb-[20px] pd:mb-0 text-center md:text-left  flex justify-end flex-col sm:min-w-[550px] ">
+            <h3 className=" text-[2.188rem] mb-4">Formal Bespoke</h3>
+            <h6 className=" text-sm  xl:text-md uppercase font-montserrat font-light text-secondary-700 mb-5  ">
+              Crafted for your style
+            </h6>
+            <Link href="/gallery">
+              <ButtonDemo text="Explore More" className=" border border-secondary-100 !min-w-[280px]" />
+            </Link>
+          </div> */}
+        </div>
+      </motion.div>
+      <div className="flex-1 xl:flex-0 hidden lg:flex content px-[100px] pt-[30px]  pb-[20px] pd:mb-0 text-center md:text-left justify-end flex-col xl:min-w-[550px]">
+        <h3 className="subtitle flex-1">About Us</h3>
+        <div className="hero-content">
+          <h3 className="text-[2.188rem] mb-4">Formal Bespoke</h3>
+          <h6 className="text-sm  xl:text-md uppercase font-montserrat font-light text-secondary-700 mb-5  ">
+            Crafted for your style
+          </h6>
+          <a href="#our-story">
+            <ButtonDemo text="Explore" className=" border border-secondary-100" />
+          </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
@@ -126,11 +181,12 @@ const OurStorySection = () => {
   const [inView3, setIsInView3] = useState(false);
 
   return (
-    <section className="!pt-0 !pb-0 text-center md:text-left">
-      <div className="container">
-        <h3 className="subtitle md:!mb-[8.5rem]">our story</h3>
+    <section className=" !pb-0 text-center md:text-left">
+      <div className="container" >
+        <h3 className="subtitle md:!mb-[90px]">our story</h3>
 
-        <div className="grid  md:grid-cols-[1fr_1.6fr] 4xl:grid-cols-[1.3fr_1.3fr_1fr] gap-[40px] sm:gap-[80px] md:gap-[120px]">
+        <div id='our-story' className="w-0 h-0 pointer-events-none transform-[translateY(-50px)]"></div>
+        <div   className="grid  md:grid-cols-[1fr_1.6fr] 4xl:grid-cols-[1.3fr_1.3fr_1fr] gap-[40px] sm:gap-[80px] md:gap-[120px]">
           <div className="col ">
             <div className="max-w-[390px]  mx-auto md:mx-0 mb-[40px]">
               <h3 className="display-2 mb-[2rem] sm:mb-[4rem]">A little about us</h3>
@@ -378,7 +434,9 @@ const LocationSection = () => {
       </div>
 
       <div className="container flex justify-center">
-        <ButtonDemo text="Follow" color="black" className="" />
+        <Link href="/booking">
+          <ButtonDemo text="Book a Fitting" color="black" className="" />
+        </Link>
       </div>
     </section>
   );
@@ -500,13 +558,16 @@ const JournalSection = () => {
                 alt="image"
                 className="absolute top-0 left-0 w-full h-full object-cover"
               />
+                <div className="absolute bottom-[15%] right-[13%] hidden xl:block">
+                {articleSignIcon}
+              </div>
               <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
                 <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
                   Article
                 </div>
                 <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">Suit Essentials</h3>
                 <div className="flex justify-center">
-                  <Link href="#/article-1" className="">
+                  <Link href="/journal-blog/article" className="">
                     <ButtonDemo
                       text="view article"
                       variant="outline"

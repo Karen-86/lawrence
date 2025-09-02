@@ -217,7 +217,9 @@ const BannerSection = () => {
             <h2 className="display-3 max-w-[255px] sm:max-w-[370px] 4xl:max-w-[550px] text-white">
               We value your voice. Share your story with us.
             </h2>
-            <ButtonDemo text="Leave a review" className="sm:!min-w-[290px]" />
+            <Link href="/contact">
+              <ButtonDemo text="Leave a review" className="sm:!min-w-[290px]" />
+            </Link>
           </div>
         </div>
       </div>
@@ -249,7 +251,9 @@ const FollowUsSection = () => {
         />
       </motion.div>
       <div className="container flex justify-center">
-        <ButtonDemo text="Follow" color="black" className="" />
+        <a href="https://www.instagram.com/lawrenceandwinslade" target="_blank">
+          <ButtonDemo text="Follow" color="black" className="" />
+        </a>
       </div>
     </section>
   );

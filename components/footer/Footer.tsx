@@ -43,13 +43,13 @@ const Footer = () => {
             <div className="socials gap-3 hidden sm:flex">
               <a
                 href="#/"
-                target="_blank"
+                // target="_blank"
                 className="fill-dark inline-block bg-white rounded-full w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] p-2 hover:bg-[rgba(255,255,255,0.8)] duration-300 hover"
               >
                 {facebookIcon}
               </a>
               <a
-                href="#/"
+                href="https://www.instagram.com/lawrenceandwinslade"
                 target="_blank"
                 className="fill-dark inline-block bg-white rounded-full w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] p-2 hover:bg-[rgba(255,255,255,0.8)] duration-300 hover"
               >
