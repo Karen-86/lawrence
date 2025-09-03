@@ -131,14 +131,16 @@ const ShowcaseSection = () => {
 const ShopSection = () => {
   const { shopCards } = useGlobalContext();
   const [grid, setGrid] = useState("3");
+  const [gridStyle, setGridStyle] = useState("1fr 1fr 1fr");
   const isIpad = useIsMobile(768);
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    if (isIpad)   setGrid('2')
-    if (isMobile)   setGrid('1')
-  
-  },[isIpad, isMobile])
+    if (isIpad) setGrid("2");
+    if (isMobile) setGrid("1");
+    if (isIpad) setGridStyle("1fr 1fr");
+    if (isMobile) setGridStyle("1fr");
+  }, [isIpad, isMobile]);
 
   const callback = (item: any) => {
     console.log(item.value);
@@ -278,7 +280,10 @@ const ShopSection = () => {
                   className={`hidden md:block border border-line p-[8px] cursor-pointer hover:border-[rgba(0,0,0,0.2)] ${
                     grid == "2" ? "text-white bg-dark" : ""
                   }`}
-                  onClick={() => setGrid("2")}
+                  onClick={() => {
+                    setGrid("2");
+                    setGridStyle("1fr 1fr");
+                  }}
                 >
                   {gridTwoIcon}
                 </div>
@@ -286,7 +291,10 @@ const ShopSection = () => {
                   className={`hidden md:block border border-line p-[8px] cursor-pointer hover:border-[rgba(0,0,0,0.2)] ${
                     grid == "3" ? "text-white bg-dark" : ""
                   }`}
-                  onClick={() => setGrid("3")}
+                  onClick={() => {
+                    setGrid("3");
+                    setGridStyle("1fr 1fr 1fr");
+                  }}
                 >
                   {gridThreeIcon}
                 </div>
@@ -294,7 +302,10 @@ const ShopSection = () => {
                   className={`hidden lg:block border border-line p-[8px] cursor-pointer hover:border-[rgba(0,0,0,0.2)] ${
                     grid == "4" ? "text-white bg-dark" : ""
                   }`}
-                  onClick={() => setGrid("4")}
+                  onClick={() => {
+                    setGrid("4");
+                    setGridStyle('1fr 1fr 1fr 1fr')
+                  }}
                 >
                   {gridFourIcon}
                 </div>
@@ -303,7 +314,8 @@ const ShopSection = () => {
 
             {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-12"> */}
             <div
-              className={`grid grid-cols-${grid} ${
+              style={{ gridTemplateColumns: gridStyle }}
+              className={`grid  ${
                 grid == "2" ? "gap-[50px]" : grid == "3" ? "gap-[40px]" : grid == "4" ? "gap-[30px]" : "gap-[60px]"
               }`}
             >
