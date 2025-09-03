@@ -70,7 +70,7 @@ const ShowcaseSection = () => {
           className="absolute top-0 left-0 w-full h-full object-cover "
         />
         <div className="overlay absolute bg-[rgba(0,0,0,0.3)] sm:hidden top-0 left-0 w-full h-full"></div>
-        <div className="container flex-1   relative flex gap-10 flex-col lg:flex-row items-center  justify-center ">
+        <div className="container flex-1 relative flex gap-10 flex-col lg:flex-row items-center justify-center ">
           <div className="showcase-content text-white text-center ">
             <div className="text-[0.625rem] sm:text-sm uppercase mb-[2rem]">our partners</div>
             <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useGlobalContext } from "@/context";
 import { useIsMobile } from "@/hooks/useIsMobile";
+import { useParams } from "next/navigation";
 
 const {
   articleCoverImage,
@@ -20,6 +21,11 @@ const {
 const { shareIcon, heartIcon, solidHeartIcon, articleSignIcon } = localData.svgs;
 
 const Template = () => {
+  const { article } = useParams()
+  const { actionCards } = useGlobalContext()
+  
+  const currentArticle = actionCards.find((item:any)=>item.slug == article)
+
   return (
     <main className="article-page" id="article-page">
       <header className="hero  min-h-[100vh] flex flex-col">
@@ -34,7 +40,7 @@ const Template = () => {
                 Journal
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">Suit Essentials</div>
+              <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">{currentArticle.title}</div>
             </div>
           </div>
         </Navbar>
@@ -56,7 +62,10 @@ const ShowcaseSection = () => {
 
   const [inView1, setIsInView1] = useState(false);
 
-  console.log(isMobile ? "mobile" : "desktop");
+   const { article } = useParams()
+  const { actionCards } = useGlobalContext()
+  
+  const currentArticle = actionCards.find((item:any)=>item.slug == article)
 
   return (
     <div className=" flex-1  pb-[2rem]  flex flex-col items-center  ">
@@ -69,7 +78,7 @@ const ShowcaseSection = () => {
         data-lazy="fade"
       >
         <Image
-          src={isMobile ? articleMobileCoverImage : articleCoverImage}
+          src={currentArticle.image}
           fill={true}
           alt="background image"
           className="absolute top-0 left-0 w-full h-full object-cover object-[50%_35%]"
@@ -78,7 +87,7 @@ const ShowcaseSection = () => {
         <div className="container flex-1   relative flex gap-10 flex-col lg:flex-row items-center  justify-center ">
           <div className="showcase-content text-white text-center ">
             <div className="text-[0.625rem] sm:text-sm uppercase mb-[2rem]">article</div>
-            <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">Suit Essentials</h1>
+            <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">{currentArticle.title}</h1>
           </div>
         </div>
       </motion.div>
@@ -161,58 +170,24 @@ const ArticleSection = () => {
   );
 };
 
-const JournalSection = () => {
-  const { actionCards } = useGlobalContext();
+const DecorativeSection = () => {
+  const isMobile = useIsMobile();
   const [inView1, setIsInView1] = useState(false);
 
   return (
-    <section>
-      <div className="container">
-        <div className=" lg:flex justify-between  lg:gap-50">
-          <h3 className="subtitle text-center 4xl:!mb-[5rem]">Journal</h3>
-          <div className="flex-1">
-            <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px]  mb-[5rem]">
-              <motion.div
-                className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
-                viewport={{ amount: 0.3 }}
-                onViewportEnter={() => setIsInView1(true)}
-                data-lazy="fade"
-              >
-                <Image
-                  src={journalSample1Image}
-                  fill={true}
-                  alt="image"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
-                <div className="absolute bottom-[15%] right-[13%] hidden xl:block">{articleSignIcon}</div>
-                <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
-                  <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
-                    Article
-                  </div>
-                  <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">Suit Essentials</h3>
-                  <div className="flex justify-center">
-                    <Link href="/journal-blog/article" className="">
-                      <ButtonDemo
-                        text="view article"
-                        variant="outline"
-                        className=" border border-[rgba(255,255,255,0.5)] !text-white hover:!bg-[rgba(217,217,217,0.15)]"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-
-              <ActionCard {...actionCards[0]} />
-            </div>
-            <div className="flex justify-center">
-              <Link href="/journal-blog">
-                <ButtonDemo text="View All" className=" border border-secondary-100 !min-w-[280px]" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <motion.section
+      className={`relative min-h-[550px] sm:h-[100vh] ${inView1 ? "lazy-animate" : ""} `}
+      viewport={{ amount: 0.3 }}
+      onViewportEnter={() => setIsInView1(true)}
+      data-lazy="fade"
+    >
+      <Image
+        src={isMobile ? articleDecorativeMobileCoverImage : articleDecorativeCoverImage}
+        fill={true}
+        alt="background image"
+        className="absolute top-0 left-0 w-full h-full object-cover object-["
+      />
+    </motion.section>
   );
 };
 
@@ -273,24 +248,58 @@ const Article2Section = () => {
   );
 };
 
-const DecorativeSection = () => {
-  const isMobile = useIsMobile();
+const JournalSection = () => {
+  const { actionCards } = useGlobalContext();
   const [inView1, setIsInView1] = useState(false);
 
   return (
-    <motion.section
-      className={`relative min-h-[550px] sm:h-[100vh] ${inView1 ? "lazy-animate" : ""} `}
-      viewport={{ amount: 0.3 }}
-      onViewportEnter={() => setIsInView1(true)}
-      data-lazy="fade"
-    >
-      <Image
-        src={isMobile ? articleDecorativeMobileCoverImage : articleDecorativeCoverImage}
-        fill={true}
-        alt="background image"
-        className="absolute top-0 left-0 w-full h-full object-cover object-["
-      />
-    </motion.section>
+    <section>
+      <div className="container">
+        <div className=" lg:flex justify-between  lg:gap-50">
+          <h3 className="subtitle text-center 4xl:!mb-[5rem]">Other Article</h3>
+          <div className="flex-1">
+            <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px] mb-[5rem]">
+              {/* <motion.div
+                className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
+                viewport={{ amount: 0.3 }}
+                onViewportEnter={() => setIsInView1(true)}
+                data-lazy="fade"
+              >
+                <Image
+                  src={journalSample1Image}
+                  fill={true}
+                  alt="image"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+                <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
+                  <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
+                    Article
+                  </div>
+                  <h3 className="display-2 mb-[2rem] 4xl:mb-[4rem] text-center text-white w-full">Suit Essentials</h3>
+                  <div className="flex justify-center">
+                    <Link href="/journal-blog/article" className="">
+                      <ButtonDemo
+                        text="view article"
+                        variant="outline"
+                        className=" border border-[rgba(255,255,255,0.5)] !text-white hover:!bg-[rgba(217,217,217,0.15)]"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </motion.div> */}
+
+              <ActionCard {...actionCards[0]} />
+              <ActionCard {...actionCards[1]} />
+            </div>
+            <div className="flex justify-center">
+              <Link href="/journal-blog">
+                <ButtonDemo text="View All" className=" border border-secondary-100 !min-w-[280px]" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

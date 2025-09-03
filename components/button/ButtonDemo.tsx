@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactElement,ReactNode, useEffect, useState } from "react";
+import React, { ReactElement, ReactNode, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const buttonStyles = {
@@ -16,32 +16,31 @@ const buttonStyles = {
     defaultColor: "",
     green: "bg-green-50 hover:bg-green-100 text-green-600",
     yellow: "bg-yellow-50 hover:bg-yellow-100 text-yellow-600",
-       black: "bg-dark hover:bg-black",
+    black: "bg-dark hover:bg-black",
   },
   outline: {
     defaultColor: "bg-tranpsparent",
     green: "text-green-600 hover:text-green-600 border-green-200 hover:border-green-300 hover:bg-green-50",
-    yellow:
-      "text-yellow-600 hover:text-yellow-600 border-yellow-200 hover:border-yellow-300 hover:bg-yellow-50",
-       black: "bg-dark hover:bg-black",
+    yellow: "text-yellow-600 hover:text-yellow-600 border-yellow-200 hover:border-yellow-300 hover:bg-yellow-50",
+    black: "bg-dark hover:bg-black",
   },
   ghost: {
     defaultColor: "",
     green: "text-green-600 hover:text-green-600 hover:bg-green-50",
     yellow: "text-yellow-600 hover:text-yellow-600 hover:bg-yellow-50",
-       black: "bg-dark hover:bg-black",
+    black: "bg-dark hover:bg-black",
   },
   destructive: {
     defaultColor: "",
     green: "bg-red-600 hover:bg-red-500",
     yellow: "bg-orange-600 hover:bg-orange-500",
-       black: "bg-dark hover:bg-black",
+    black: "bg-dark hover:bg-black",
   },
   link: {
     defaultColor: "",
     green: "text-green-600 hover:text-green-500",
     yellow: "text-yellow-600 hover:text-yellow-500",
-       black: "bg-dark hover:bg-black",
+    black: "bg-dark hover:bg-black",
   },
 };
 
@@ -55,7 +54,7 @@ type ButtonDemoProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   endIcon?: ReactElement | null;
   color?: "defaultColor" | "green" | "yellow" | "black";
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
 };
 
 export function ButtonDemo({

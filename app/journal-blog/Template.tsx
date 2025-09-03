@@ -72,16 +72,16 @@ const JournalSection = () => {
 
   const [showAll, setShowAll] = useState(false);
 
-  const visibleCards = showAll ? actionCards : actionCards.slice(0, 7);
+  const visibleCards = showAll ? actionCards : actionCards.slice(0, 8);
 
   return (
     <section>
       <div className="container">
         <div className=" lg:flex justify-between  lg:gap-50">
-          <h3 className="subtitle text-center 4xl:!mb-[5rem]">Journal</h3>
+          <h3 className="subtitle text-center 4xl:!mb-[5rem]">The Journal</h3>
           <div className="flex-1">
             <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px]  mb-[5rem]">
-              <motion.div
+              {/* <motion.div
                 className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
                 viewport={{ amount: 0.3 }}
                 onViewportEnter={() => setIsInView1(true)}
@@ -93,7 +93,6 @@ const JournalSection = () => {
                   alt="image"
                   className="absolute top-0 left-0 w-full h-full object-cover"
                 />
-                <div className="absolute bottom-[15%] right-[13%] hidden xl:block">{articleSignIcon}</div>
                 <div className="card-content  absolute top-1/2 -translate-y-1/2 w-full">
                   <div className="uppercase text-center text-[rgba(255,255,255,0.8)] text-sm tracking-[1.5px] mb-[1rem]">
                     Article
@@ -109,16 +108,16 @@ const JournalSection = () => {
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
               {visibleCards.map((item: any, index: any) => {
                 return <ActionCard key={index} {...item} />;
               })}
             </div>
-            {!showAll && actionCards.length > 5 && (
+            {!showAll && actionCards.length > 8 && (
               <div className="flex justify-center">
                 <ButtonDemo
                   onClick={() => setShowAll(true)}
-                  text={`View More (${actionCards.length - 7})`}
+                  text={`View More (${actionCards.length - 8})`}
                   className=" border border-secondary-100 !min-w-[280px]"
                 />
               </div>

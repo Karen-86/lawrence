@@ -26,14 +26,17 @@ export function NavigationMenuDemo() {
   return (
     <NavigationMenu className={`hidden lg:flex navigation-menu pt-6 pb-6 4xl:pt-10 4xl:pb-10 min-w-full justify-between`} delayDuration={0}>
       <div className="flex items-center">
-        <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
+        {/* <a href="#/" className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black ">
           Shop
-        </a>
-        <Link href={"#services"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "services" ? "text-success focus:text-success" : ""}>Services</div>
+        </a> */}
+          <Link href={"/shop"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/shop" ? "text-secondary-500 focus:text-success" : ""}>Shop</div>
         </Link>
-        <Link href={"#gallery"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "gallery" ? "text-success focus:text-success" : ""}>Gallery</div>
+        <Link href={"/fabrics"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/fabrics" ? "text-secondary-500 focus:text-success" : ""}>Services</div>
+        </Link>
+        <Link href={"/gallery"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/gallery" ? "text-secondary-500 focus:text-success" : ""}>Gallery</div>
         </Link>
       </div>
       {/* <NavigationMenuList className="">
@@ -42,7 +45,7 @@ export function NavigationMenuDemo() {
           return (
             <NavigationMenuItem key={index}>
               <Link href={href} className="font-medium px-2 block hover:text-secondary">
-                <div className={activeLink ? "text-success focus:text-success" : ""}>{title}</div>
+                <div className={activeLink ? "text-secondary-500 focus:text-success" : ""}>{title}</div>
               </Link>
             </NavigationMenuItem>
           );
@@ -52,17 +55,20 @@ export function NavigationMenuDemo() {
 
       <div className="flex items-center">
         <Link href={"/about"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "about" ? "text-success focus:text-success" : ""}>About</div>
+          <div className={pathname == "/about" ? "text-secondary-500 focus:text-success" : ""}>About</div>
         </Link>
-        <Link href={"#contact"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "contact" ? "text-success focus:text-success" : ""}>Contact</div>
+        <Link href={"/contact"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/contact" ? "text-secondary-500 focus:text-success" : ""}>Contact</div>
         </Link>
-        <Link
+        <Link href={"/booking"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/booking" ? "text-secondary-500 focus:text-success" : ""}>Book a fitting</div>
+        </Link>
+        {/* <Link
           href="/booking"
           className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black "
         >
           Book a fitting
-        </Link>
+        </Link> */}
       </div>
       {/* <div className="brand">LAWRENCE & WINSLADE</div> */}
     </NavigationMenu>

@@ -89,7 +89,7 @@ export function CarouselDemo({
       <CarouselContent className={`-ml-1 ${contentClassName} `}>
         {items.map((item: any, index: any) => (
           <CarouselItem key={index} className={`pl-1 ${itemClassName}`}>
-            <div className="p-1">{children({ item, index })}</div>
+            <div className="">{children({ item, index })}</div>
           </CarouselItem>
         ))}
       </CarouselContent>

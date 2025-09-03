@@ -159,7 +159,7 @@ const ShowcaseSection = () => {
           </div> */}
         </div>
       </motion.div>
-      <div className="flex-1 xl:flex-0 hidden lg:flex content px-[100px] pt-[30px]  pb-[20px] pd:mb-0 text-center md:text-left justify-end flex-col xl:min-w-[550px]">
+      <div className="flex-1 xl:flex-0 hidden lg:flex content px-[90px] pt-[30px]  pb-[20px] text-center md:text-left justify-end flex-col xl:min-w-[550px]">
         <h3 className="subtitle flex-1">About Us</h3>
         <div className="hero-content">
           <h3 className="text-[2.188rem] mb-4">Formal Bespoke</h3>
@@ -544,9 +544,9 @@ const JournalSection = () => {
     <section>
       <div className="container">
         <div className=" lg:flex justify-between  lg:gap-50">
-          <h3 className="subtitle text-center 4xl:!mb-[5rem]">Journal</h3>
+          <h3 className="subtitle text-center 4xl:!mb-[5rem]">The Journal</h3>
           <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px] flex-1">
-            <motion.div
+            {/* <motion.div
               className={`card image-wrapper relative w-full h-0 pt-[135%] ${inView1 ? "lazy-animate" : ""}`}
               viewport={{ amount: 0.3 }}
               onViewportEnter={() => setIsInView1(true)}
@@ -576,9 +576,10 @@ const JournalSection = () => {
                   </Link>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <ActionCard {...actionCards[0]} />
+            <ActionCard {...actionCards[1]} />
           </div>
         </div>
       </div>

@@ -8,4 +8,7 @@ export { default as ServiceCard } from "./cards/service-card/ServiceCard.tsx";
 export { default as AboutCard } from "./cards/about-card/AboutCard.tsx";
 export { default as DifferenceCard } from "./cards/difference-card/DifferenceCard.tsx";
 export { default as ActionCard } from "./cards/action-card/ActionCard.tsx";
+export { default as ShopCard } from "./cards/shop-card/ShopCard.tsx";
 export { TooltipDemo } from "./tooltip/TooltipDemo.tsx";
+export { CheckboxDemo } from "./checkbox/CheckboxDemo.tsx";
+export { SelectScrollable } from "./select/select-scrollable/SelectScrollable.tsx";

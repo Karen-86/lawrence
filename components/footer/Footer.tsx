@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import localData from "@/localData";
 import { ButtonDemo } from "@/components/index";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const { signIcon } = localData.images;
 const { logoWhite, facebookIcon, instagramIcon } = localData.svgs;
@@ -68,10 +69,12 @@ const Footer = () => {
               </a>
               <hr className=" border-[rgba(255,255,255,0.7)] mb-[1.5rem]" />
               <div className="flex justify-end">
-                <ButtonDemo
-                  text="subscribe"
-                  className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
-                />
+                <a href="mailto:admin@lawrenceandwinslade.com" target="_blank">
+                  <ButtonDemo
+                    text="subscribe"
+                    className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -90,36 +93,36 @@ const Footer = () => {
             >
               Home
             </a>
-            <a
-              href="#about"
+            <Link
+              href="/about"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               About us
-            </a>
-            <a
-              href="#LW"
+            </Link>
+            <Link
+              href="#/"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               L&W World
-            </a>
-            <a
-              href="#creations"
+            </Link>
+            <Link
+              href="#/"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Creations
-            </a>
-            <a
-              href="#/gallery"
+            </Link>
+            <Link
+              href="/gallery"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Gallery
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           <div className="col  flex flex-col items-start order-3 sm:order-0">
@@ -159,10 +162,12 @@ const Footer = () => {
             </a>
             <hr className=" border-[rgba(255,255,255,0.7)] mb-[1.5rem]" />
             <div className="flex justify-end">
-              <ButtonDemo
-                text="subscribe"
-                className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
-              />
+              <a href="mailto:admin@lawrenceandwinslade.com" target="_blank">
+                <ButtonDemo
+                  text="subscribe"
+                  className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
+                />
+              </a>
             </div>
           </div>
 

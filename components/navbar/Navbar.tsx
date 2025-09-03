@@ -14,10 +14,12 @@ import { usePathname } from "next/navigation";
 const { logoSm, barsIcon } = localData.svgs;
 
 export const navLinks = [
-  { title: "Services", href: "#services" },
-  { title: "Gallery", href: "#featured-work" },
-  { title: "About", href: "#about" },
-  { title: "Contact", href: "#contact" },
+  { title: "Shop", href: "/shop" },
+  { title: "Services", href: "/fabrics" },
+  { title: "Gallery", href: "/gallery" },
+  { title: "About", href: "/about" },
+  { title: "Contact", href: "/contact" },
+  { title: "Book a Fitting", href: "/booking" },
 ];
 
 export const dropdownLinksModules: { title: string; href: string; description: string }[] = [
@@ -38,7 +40,7 @@ export const dropdownLinksModules: { title: string; href: string; description: s
   },
 ];
 
-export default function Navbar({children = null}:any) {
+export default function Navbar({ children = null }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [height, setHeight] = useState("");
   const navbar = useRef<HTMLDivElement>(null);
@@ -131,7 +133,6 @@ export default function Navbar({children = null}:any) {
       <Menu isMenuOpen={isMenuOpen} height={height} />
 
       {children}
- 
     </nav>
   );
 }
@@ -140,6 +141,7 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
   useLockBodyScroll(isMenuOpen);
   const pathname = usePathname();
 
+  console.log(pathname, "jjj");
   return (
     <div className="relative z-1">
       <div
@@ -149,36 +151,47 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
       >
         <div className="flex-1">
           <div className="menu-header">
-            <a
+            {/* <a
               href="#/"
               className="px-2 flex justify-center hover:bg-neutral-50 py-3 border-y border-line font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black "
             >
               Shop
-            </a>
-            <Link
-              href={"#services"}
+            </a> */}
+            {navLinks.map((item, index) => {
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line"
+                >
+                  <div className={pathname == item.href ? "text-secondary-400 focus:text-success" : ""}>{item.title}</div>
+                </Link>
+              );
+            })}
+            {/* <Link
+              href={"/services"}
               className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line"
             >
               <div className={pathname == "services" ? "text-success focus:text-success" : ""}>Services</div>
             </Link>
             <Link
-              href={"#gallery"}
+              href={"/gallery"}
               className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line"
             >
               <div className={pathname == "gallery" ? "text-success focus:text-success" : ""}>Gallery</div>
             </Link>
-            <Link href={"#about"} className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line">
-              <div className={pathname == "about" ? "text-success focus:text-success" : ""}>About</div>
+            <Link href={"/about"} className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line">
+              <div className={pathname == "about" ? "!text-red-500 focus:text-success" : ""}>About</div>
             </Link>
             <Link
-              href={"#contact"}
+              href={"/contact"}
               className="font-medium px-2 flex justify-center hover:bg-neutral-50 py-3 border-b border-line"
             >
               <div className={pathname == "contact" ? "text-success focus:text-success" : ""}>Contact</div>
-            </Link>
+            </Link> */}
           </div>
 
-          <div className="menu-body mx-3 py-4 ">
+          <div className="menu-body mx-3 py-4 flex justify-between flex-wrap">
             <a
               href="#/"
               className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"

@@ -1,0 +1,30 @@
+.checkbox {
+  &[data-color="success"] {
+    @apply text-success;
+    button {
+      @apply border-success;
+      &[data-state="checked"] {
+        @apply bg-success;
+      }
+    }
+  }
+  &[data-color="warning"] {
+    @apply text-warning;
+    button {
+    @apply border-warning;
+      &[data-state="checked"] {
+        @apply bg-warning;
+      }
+    }
+  }
+
+  &[data-color="dark"] {
+    @apply text-black;
+    button {
+    @apply border-black;
+      &[data-state="checked"] {
+        @apply bg-black;
+      }
+    }
+  }
+}
