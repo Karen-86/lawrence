@@ -12,3 +12,4 @@ export { default as ShopCard } from "./cards/shop-card/ShopCard.tsx";
 export { TooltipDemo } from "./tooltip/TooltipDemo.tsx";
 export { CheckboxDemo } from "./checkbox/CheckboxDemo.tsx";
 export { SelectScrollable } from "./select/select-scrollable/SelectScrollable.tsx";
+export { DialogDemo } from "./dialog/DialogDemo.tsx";

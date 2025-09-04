@@ -141,7 +141,6 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
   useLockBodyScroll(isMenuOpen);
   const pathname = usePathname();
 
-  console.log(pathname, "jjj");
   return (
     <div className="relative z-1">
       <div

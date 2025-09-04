@@ -106,7 +106,7 @@ const Footer = () => {
               L&W World
             </Link>
             <Link
-              href="#/"
+              href="/gallery"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Creations

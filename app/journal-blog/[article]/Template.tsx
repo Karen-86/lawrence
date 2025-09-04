@@ -255,8 +255,8 @@ const JournalSection = () => {
   return (
     <section>
       <div className="container">
-        <div className=" lg:flex justify-between  lg:gap-50">
-          <h3 className="subtitle text-center 4xl:!mb-[5rem]">Other Article</h3>
+        <div className="lg:flex lg:gap-10">
+          <h3 className="subtitle text-center lg:text-start 4xl:!mb-[5rem] min-w-[20%] 4xl:min-w-[17%]">Other Article</h3>
           <div className="flex-1">
             <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px] mb-[5rem]">
               {/* <motion.div

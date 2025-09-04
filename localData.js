@@ -70,6 +70,27 @@ const images = {
   shopMobileSample1Image: "/assets/images/rest/shop-page/shop-mobile-cover.png",
   shopSample2Image: "/assets/images/rest/shop-page/image-2.png",
   shopSample3Image: "/assets/images/rest/shop-page/image-3.png",
+  
+  // category
+  categoryFormalBespokeCoverImage: "/assets/images/rest/category/formal-bespoke/cover.png",
+  categoryCasualBespokeCoverImage: "/assets/images/rest/category/casual-bespoke/cover.png",
+  categoryWeddingBespokeCoverImage: "/assets/images/rest/category/wedding-bespoke/cover.png",
+  categoryWomenBespokeCoverImage: "/assets/images/rest/category/women-bespoke/cover.png",
+  categoryFabricsCoverImage: "/assets/images/rest/category/fabrics/cover.png",
+  
+  // gallery
+  gallerySample1Image: "/assets/images/rest/category/gallery/image-1.png",
+  gallerySample2Image: "/assets/images/rest/category/gallery/image-2.png",
+  gallerySample3Image: "/assets/images/rest/category/gallery/image-3.png",
+  gallerySample4Image: "/assets/images/rest/category/gallery/image-4.png",
+  gallerySample5Image: "/assets/images/rest/category/gallery/image-5.png",
+  gallerySample6Image: "/assets/images/rest/category/gallery/image-6.png",
+  gallerySample7Image: "/assets/images/rest/category/gallery/image-7.png",
+  gallerySample8Image: "/assets/images/rest/category/gallery/image-8.png",
+  gallerySample9Image: "/assets/images/rest/category/gallery/image-9.png",
+  gallerySample10Image: "/assets/images/rest/category/gallery/image-10.png",
+  gallerySample11Image: "/assets/images/rest/category/gallery/image-11.png",
+  gallerySample12Image: "/assets/images/rest/category/gallery/image-12.png",
 };
 
 const localData = {

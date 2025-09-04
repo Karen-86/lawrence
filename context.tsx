@@ -19,6 +19,25 @@ const {
   journalSample5Image,
   journalSample6Image,
   journalSample7Image,
+
+  categoryFormalBespokeCoverImage,
+  categoryCasualBespokeCoverImage,
+  categoryWeddingBespokeCoverImage,
+  categoryWomenBespokeCoverImage,
+  categoryFabricsCoverImage,
+
+  gallerySample1Image,
+  gallerySample2Image,
+  gallerySample3Image,
+  gallerySample4Image,
+  gallerySample5Image,
+  gallerySample6Image,
+  gallerySample7Image,
+  gallerySample8Image,
+  gallerySample9Image,
+  gallerySample10Image,
+  gallerySample11Image,
+  gallerySample12Image,
 } = localData.images;
 
 type StateType = {
@@ -30,6 +49,7 @@ type ContextType = {
   setState: (newState: StateType) => void;
   actionCards: any;
   shopCards: any;
+  categories: any;
 };
 
 export const Context = createContext<ContextType | null>(null);
@@ -346,6 +366,79 @@ export default function Provider({
       image: journalSample3Image,
     },
 
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample1Image,
+    },
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample2Image,
+    },
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample3Image,
+    },
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample1Image,
+    },
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample2Image,
+    },
+    {
+      title: "Taupe Suit",
+      description: "100% Wool by Loro Piana, Italy",
+      price: "£1,599.00",
+      image: journalSample3Image,
+    },
+  ];
+
+  const galleryItems = [
+    { image: gallerySample1Image },
+    { image: gallerySample2Image },
+    { image: gallerySample3Image },
+    { image: gallerySample4Image },
+    { image: gallerySample5Image },
+    { image: gallerySample6Image },
+    { image: gallerySample7Image },
+    { image: gallerySample8Image },
+    { image: gallerySample9Image },
+    { image: gallerySample10Image },
+    { image: gallerySample11Image },
+    { image: gallerySample12Image },
+
+
+        { image: gallerySample1Image },
+    { image: gallerySample2Image },
+    { image: gallerySample3Image },
+    { image: gallerySample4Image },
+    { image: gallerySample5Image },
+    { image: gallerySample6Image },
+    { image: gallerySample7Image },
+    { image: gallerySample8Image },
+    { image: gallerySample9Image },
+    { image: gallerySample10Image },
+    { image: gallerySample11Image },
+    { image: gallerySample12Image },
+  ];
+
+  const categories = [
+    { title: "Formal Bespoke", slug: "formal-bespoke", image: categoryFormalBespokeCoverImage, galleryItems: galleryItems },
+    { title: "Casual Bespoke", slug: "casual-bespoke", image: categoryCasualBespokeCoverImage, galleryItems: galleryItems },
+    { title: "Wedding Bespoke", slug: "wedding-bespoke", image: categoryWeddingBespokeCoverImage, galleryItems: galleryItems },
+    { title: "Women Bespoke", slug: "women-bespoke", image: categoryWomenBespokeCoverImage, galleryItems: galleryItems },
+    { title: "Fabrics", slug: "fabrics", image: categoryFabricsCoverImage, galleryItems: galleryItems, className: "!mb-0" },
   ];
 
   return (
@@ -356,6 +449,7 @@ export default function Provider({
         setState,
         actionCards,
         shopCards,
+        categories,
       }}
     >
       {children}

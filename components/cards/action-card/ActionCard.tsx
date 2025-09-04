@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const { shareIcon, heartIcon, solidHeartIcon } = localData.svgs;
 
-const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourite = false }) => {
+const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourite = false, isBarHidden = false }) => {
   const [isFavouriteCard, setIsFavouriteCard] = useState(isFavourite);
   const [inView1, setIsInView1] = useState(false);
 
@@ -20,7 +20,7 @@ const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourit
       onViewportEnter={() => setIsInView1(true)}
       data-lazy="fade"
     >
-      <div className="action-bar absolute top-0 right-0 m-[20px] z-2 flex gap-3 items-center">
+      <div className={`action-bar absolute top-0 right-0 m-[20px] z-2 flex gap-3 items-center ${isBarHidden ? 'hidden': ''}`}>
         <div className="col bg-white  flex items-center justify-center">
           <TooltipDemo
             contentClassName="bg-white text-dark shadow-[-1px_-1px_3px_rgba(17,17,17,0.1)] "
