@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: "Explore our casual ranges, all bespoke and exclusive to you. Add your personality and style to your garments!",
     url: `${siteUrl}`,
     siteName: "Your Website Name",
-    images: [`${siteUrl}/assets/images/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
+    images: [`${siteUrl}/assets/images/rest/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
     locale: "en_US",
     type: "website",
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LAWRENCE & WINSLADE – Mens Suits",
     description: "Explore our casual ranges, all bespoke and exclusive to you. Add your personality and style to your garments!",
-    images: [`${siteUrl}/assets/images/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
+    images: [`${siteUrl}/assets/images/rest/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
   },
 };
 
