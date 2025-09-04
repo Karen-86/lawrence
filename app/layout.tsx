@@ -40,7 +40,7 @@ const baskervville = Baskervville({
   //  style: ["normal", "italic"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://next-modules.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lawrence-sable.vercel.app/";
 
 export const metadata: Metadata = {
   title: "LAWRENCE & WINSLADE – Mens Suits",
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
       // { rel: "icon", url: "/assets/images/favicon/favicon-32x32.png", sizes: "32x32" },
       { rel: "icon", url: "/assets/images/favicon.png" },
     ],
-    apple: "/assets/images/favicon/apple-icon.png",
+    apple: "/assets/images/favicon/favicon.png",
   },
   openGraph: {
-    title: "Sheet - Your Website Name",
-    description: "This is the sheet page for managing your content.",
+    title: "LAWRENCE & WINSLADE – Mens Suits",
+    description: "Explore our casual ranges, all bespoke and exclusive to you. Add your personality and style to your garments!",
     url: `${siteUrl}`,
     siteName: "Your Website Name",
     images: [`${siteUrl}/assets/images/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sheet - Your Website Name",
-    description: "This is the sheet page for managing your content.",
+    title: "LAWRENCE & WINSLADE – Mens Suits",
+    description: "Explore our casual ranges, all bespoke and exclusive to you. Add your personality and style to your garments!",
     images: [`${siteUrl}/assets/images/og-image.png`], //recomened sizes 1200x630, 1080 × 566, 600 × 315 | aspect ratio 1.91:1
   },
 };
