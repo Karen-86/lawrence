@@ -30,6 +30,7 @@ const montserrat = Montserrat({
     "900", // Black
   ],
 });
+
 const baskervville = Baskervville({
   variable: "--font-baskervville",
   subsets: ["latin"],
