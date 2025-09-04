@@ -47,6 +47,7 @@ const Template = () => {
       </header>
 
       <PartnersSection />
+      <hr className="border-line" />
       <FeaturedWorkSection />
       <hr className="border-line" />
       <ServicesSection />
@@ -61,7 +62,7 @@ const ShowcaseSection = () => {
   const [inView1, setIsInView1] = useState(false);
 
   return (
-    <div className="showcase flex-1 bg-[rgb(252,252,252)] pb-[2rem]  flex flex-col items-center">
+    <div className="showcase flex-1 pb-[2rem]  flex flex-col items-center">
       <motion.div
         className={`flex-1 hero-center  bg-cover w-full relative flex items-end py-[8rem] sm:py-[4rem] 4xl:py-[8rem]  ${
           inView1 ? "lazy-animate" : ""
@@ -98,17 +99,18 @@ const ShowcaseSection = () => {
 };
 
 const PartnersSection = () => {
+  // bg-[rgb(252,252,252)]
   return (
-    <section className="partners bg-[rgb(252,252,252)] !pb-[4.5rem] !pt-[3rem]" id="partners">
+    <section className="partners  !pb-[4.5rem] !pt-[3rem]" id="partners">
       <div className="container">
         <h2 className="subtitle text-center !mb-[4.5rem]">Our fabric partners</h2>
         <div className="font-baskervville flex gap-15 xl:gap-10 flex-wrap  justify-center  xl:justify-between mx-auto mb-[2.8rem] sm:mb-[4.5rem]">
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample1Image} alt="" />
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample2Image} alt="" />
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample3Image} alt="" />
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample4Image} alt="" />
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample5Image} alt="" />
-          <img className="max-w-[190px] max-h-[70px] object-contain" src={partnersSample6Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample1Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample2Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample3Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample4Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample5Image} alt="" />
+          <img className="max-w-[190px] max-h-[60px] object-contain" src={partnersSample6Image} alt="" />
         </div>
         <div className="flex justify-center">
           <Link href="/fabrics" className="custom-link">
