@@ -32,7 +32,7 @@ const Template = () => {
         <Navbar>
           <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
             <div className="container flex items-center gap-2">
-              <Link href="/" className="link text-xs font-medium px-1 underline">
+              <Link href="/" className="link text-xs font-medium px-1 hover:underline">
                 Home
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>

@@ -50,11 +50,11 @@ const ServiceCard = ({
             alt="image"
             data-lazy="fade"
           />
-          <Link href="/booking">
+          <Link href="/contact">
             <ButtonDemo
-              text="BOOK A FITTING"
+              text="Book your Appointment"
               size="sm"
-              className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !py-[1.5rem] !text-white !text-[0.8rem] !min-w-[200px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
+              className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !text-[0.7rem] !font-normal !px-[1.5rem] !text-white  !min-w-[150px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
             />
           </Link>
         </div>

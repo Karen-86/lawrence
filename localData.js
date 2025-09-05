@@ -91,6 +91,26 @@ const images = {
   gallerySample10Image: "/assets/images/rest/category/gallery/image-10.png",
   gallerySample11Image: "/assets/images/rest/category/gallery/image-11.png",
   gallerySample12Image: "/assets/images/rest/category/gallery/image-12.png",
+  
+  // follow us slider
+  sliderSample1Image: "/assets/images/rest/follow-us-slider/image-1.png",
+  sliderSample2Image: "/assets/images/rest/follow-us-slider/image-2.png",
+  sliderSample3Image: "/assets/images/rest/follow-us-slider/image-3.png",
+  sliderSample4Image: "/assets/images/rest/follow-us-slider/image-4.png",
+  sliderSample5Image: "/assets/images/rest/follow-us-slider/image-5.png",
+  sliderSample6Image: "/assets/images/rest/follow-us-slider/image-6.jpg",
+  sliderSample7Image: "/assets/images/rest/follow-us-slider/image-7.jpg",
+  sliderSample8Image: "/assets/images/rest/follow-us-slider/image-8.jpg",
+  sliderSample9Image: "/assets/images/rest/follow-us-slider/image-9.jpg",
+  sliderSample10Image: "/assets/images/rest/follow-us-slider/image-10.jpg",
+  sliderSample11Image: "/assets/images/rest/follow-us-slider/image-11.jpg",
+  sliderSample12Image: "/assets/images/rest/follow-us-slider/image-12.jpg",
+  sliderSample13Image: "/assets/images/rest/follow-us-slider/image-13.jpg",
+  sliderSample14Image: "/assets/images/rest/follow-us-slider/image-14.jpg",
+  sliderSample15Image: "/assets/images/rest/follow-us-slider/image-15.jpg",
+  sliderSample16Image: "/assets/images/rest/follow-us-slider/image-16.jpg",
+  sliderSample17Image: "/assets/images/rest/follow-us-slider/image-17.jpg",
+  sliderSample18Image: "/assets/images/rest/follow-us-slider/image-18.jpg",
 };
 
 const localData = {

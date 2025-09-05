@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import localData from "@/localData";
-import { ButtonDemo } from "@/components/index";
-import { motion, useInView } from "framer-motion";
+import { ButtonDemo, InputDemo } from "@/components/index";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 const { signIcon } = localData.images;
@@ -31,7 +31,9 @@ const Footer = () => {
               <h2 className="banner-title text-[1.563rem] sm:text-[2rem] 4xl:text-[2.813rem] max-w-[255px] sm:max-w-[400px] 4xl:max-w-[550px] text-center leading-[1.4] mb-[2.7rem] 4xl:mb-[4rem]">
                 Start your journey to a suit made just for you
               </h2>
-              <ButtonDemo text="Book Your Fitting Now " className="sm:!min-w-[290px]" />
+              <Link href="/contact">
+                <ButtonDemo text="Book Your Appointment " className="!min-w-[290px]" />
+              </Link>
             </div>
           </div>
         </div>
@@ -42,13 +44,13 @@ const Footer = () => {
           <div className="col flex-1 basis-full sm:basis-auto">
             <div className="mb-[2rem]">{logoWhite}</div>
             <div className="socials gap-3 hidden sm:flex">
-              <a
+              {/* <a
                 href="#/"
                 // target="_blank"
                 className="fill-dark inline-block bg-white rounded-full w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] p-2 hover:bg-[rgba(255,255,255,0.8)] duration-300 hover"
               >
                 {facebookIcon}
-              </a>
+              </a> */}
               <a
                 href="https://www.instagram.com/lawrenceandwinslade"
                 target="_blank"
@@ -58,25 +60,27 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="col hidden sm:block 4xl:hidden mt-[4rem] max-w-[300px]">
+            <form className="col hidden sm:block 4xl:hidden mt-[4rem] max-w-[300px]">
               <h4 className="text-sm sm:text-md font-medium font-montserrat mb-[1.6rem] min-w-[300px]">Newsletter</h4>
-              <a
-                target="_blank"
-                href="mailto:example@mail.com"
-                className="text-xs sm:text-md text-[rgba(255,255,255,0.7)]  hover:text-white duration-300 inline-block mb-[1.6rem]"
-              >
-                example@mail.com
-              </a>
+
+              <InputDemo
+                required={true}
+                placeholder="Email Address"
+                className="max-w-[350px]"
+                inputClassName=" border-none focus:!outline-none focus:!ring-0"
+                name="email"
+                type="text"
+                defaultValue=""
+                callback={(e) => console.log(e.target.value)}
+              />
               <hr className=" border-[rgba(255,255,255,0.7)] mb-[1.5rem]" />
               <div className="flex justify-end">
-                <a href="mailto:admin@lawrenceandwinslade.com" target="_blank">
-                  <ButtonDemo
-                    text="subscribe"
-                    className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
-                  />
-                </a>
+                <ButtonDemo
+                  text="subscribe"
+                  className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
+                />
               </div>
-            </div>
+            </form>
           </div>
 
           <div className="col order-3 sm:order-0">
@@ -99,24 +103,24 @@ const Footer = () => {
             >
               About us
             </Link>
-            <Link
+            {/* <Link
               href="#/"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               L&W World
-            </Link>
+            </Link> */}
             <Link
               href="/gallery"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Creations
             </Link>
-            <Link
+            {/* <Link
               href="/gallery"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               Gallery
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
@@ -151,37 +155,38 @@ const Footer = () => {
             </a>
           </div>
 
-          <div className="col hidden 4xl:block">
+          <form className="col hidden 4xl:block">
             <h4 className="text-sm sm:text-md font-medium font-montserrat mb-[1.6rem] min-w-[300px]">Newsletter</h4>
-            <a
-              target="_blank"
-              href="mailto:example@mail.com"
-              className="text-xs sm:text-md text-[rgba(255,255,255,0.7)]  hover:text-white duration-300 inline-block mb-[1.6rem]"
-            >
-              example@mail.com
-            </a>
+            <InputDemo
+              required={true}
+              placeholder="Email Address"
+              className="max-w-[350px]"
+              inputClassName=" border-none focus:!outline-none focus:!ring-0"
+              name="email"
+              type="text"
+              defaultValue=""
+              callback={(e) => console.log(e.target.value)}
+            />
             <hr className=" border-[rgba(255,255,255,0.7)] mb-[1.5rem]" />
             <div className="flex justify-end">
-              <a href="mailto:admin@lawrenceandwinslade.com" target="_blank">
-                <ButtonDemo
-                  text="subscribe"
-                  className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
-                />
-              </a>
+              <ButtonDemo
+                text="subscribe"
+                className=" border border-[rgba(255,255,255,.3)] !py-5 !min-w-[160px] !bg-transparent !text-white !font-normal !text-xs hover:!bg-white hover:!text-dark"
+              />
             </div>
-          </div>
+          </form>
 
           <div className="col basis-full order-4 sm:hidden">
             <div className="socials flex gap-3">
-              <a
+              {/* <a
                 href="#/"
                 target="_blank"
                 className="fill-dark inline-block bg-white rounded-full w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] p-2 hover:bg-[rgba(255,255,255,0.8)] duration-300 hover"
               >
                 {facebookIcon}
-              </a>
+              </a> */}
               <a
-                href="#/"
+                href="https://www.instagram.com/lawrenceandwinslade"
                 target="_blank"
                 className="fill-dark inline-block bg-white rounded-full w-[40px] sm:w-[45px] h-[40px] sm:h-[45px] p-2 hover:bg-[rgba(255,255,255,0.8)] duration-300 hover"
               >
@@ -195,17 +200,17 @@ const Footer = () => {
 
         <div className="flex gap-x-20 gap-y-15 justify-between flex-wrap">
           <div className="flex gap-10">
-            <a href="#/privacy-policy" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
+            <Link href="/privacy-policy" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
               Privacy Policy
-            </a>
-            <a href="#/terms-of-use" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
+            </Link>
+            <Link href="/terms-of-use" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
               Terms of Use
-            </a>
+            </Link>
           </div>
 
-          <a href="#/cookies" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
+          <Link href="/cookies" className="text-xs text-[rgba(255,255,255,0.7)]  hover:text-white duration-300">
             Cookies
-          </a>
+          </Link>
 
           <p className="text-xs  text-[rgba(255,255,255,0.7)] text-center basis-full lg:basis-auto">
             © 2025 Lawrence & Winslade. All Rights Reserved.

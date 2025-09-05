@@ -5,7 +5,7 @@ import { Navbar, Footer } from "@/components/index.js";
 import { ButtonDemo, CarouselDemo, ServiceCard, DifferenceCard } from "@/components/index.js";
 import localData from "@/localData";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import Link from "next/link";
 
@@ -48,9 +48,9 @@ const Template = () => {
 
       <PartnersSection />
       <hr className="border-line" />
+      <ServicesSection />
       <FeaturedWorkSection />
       <hr className="border-line" />
-      <ServicesSection />
       <DifferenceSection />
       <BespokeSection />
       <TestimonialsSection />
@@ -89,8 +89,8 @@ const ShowcaseSection = () => {
               <br /> crafted exclusively for you
             </h1>
           </div>
-          <Link href="/booking">
-            <ButtonDemo text="Book a Fitting" className="" />
+          <Link href="/contact">
+            <ButtonDemo text="Book Your Appointment" className="!min-w-[290px]" />
           </Link>
         </div>
       </motion.div>
@@ -158,10 +158,10 @@ const FeaturedWorkSection = () => {
               alt="image"
               className="absolute top-0 left-0 w-full h-full object-cover [object-position:85%]"
             />
-            <Link href="/booking" className="hidden md:flex">
+            <Link href="/contact" className="hidden md:flex">
               <ButtonDemo
-                text="BOOK A FITTING"
-                className="absolute !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
+                text="Book Your Appointment"
+                className="absolute !min-w-[290px] !bg-[rgba(217,217,217,0.1)] border border-[rgba(255,255,255,0.5)] !text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop-blur-md hover:!bg-[rgba(217,217,217,0.15)]"
               />
             </Link>
           </motion.div>

@@ -1,5 +1,6 @@
 export { default as Navbar } from "./navbar/Navbar.tsx";
 export { ButtonDemo } from "./button/ButtonDemo.tsx";
+export { InputDemo } from "./input/InputDemo.tsx";
 export { SheetDemo } from "./sheet/SheetDemo.tsx";
 export { AccordionDemo } from "./accordion/AccordionDemo.tsx";
 export { CarouselDemo } from "./carousel/CarouselDemo.tsx";
@@ -13,3 +14,12 @@ export { TooltipDemo } from "./tooltip/TooltipDemo.tsx";
 export { CheckboxDemo } from "./checkbox/CheckboxDemo.tsx";
 export { SelectScrollable } from "./select/select-scrollable/SelectScrollable.tsx";
 export { DialogDemo } from "./dialog/DialogDemo.tsx";
+export { CarouselSliderDemo } from "./carousel-slider/CarouselSliderDemo.tsx";
+
+
+
+
+
+// sections
+export {  default as  FAQSection } from "./sections/faq-section/FAQSection.tsx";
+export {  default as  FollowUsSection } from "./sections/follow-us-section/FollowUsSection.tsx";

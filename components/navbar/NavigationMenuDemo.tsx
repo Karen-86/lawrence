@@ -32,8 +32,8 @@ export function NavigationMenuDemo() {
           <Link href={"/shop"} className="font-medium px-2 block hover:text-secondary">
           <div className={pathname == "/shop" ? "text-secondary-500 focus:text-success" : ""}>Shop</div>
         </Link>
-        <Link href={"/fabrics"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "/fabrics" ? "text-secondary-500 focus:text-success" : ""}>Services</div>
+        <Link href={"/#services"} className="font-medium px-2 block hover:text-secondary">
+          <div className={pathname == "/services" ? "text-secondary-500 focus:text-success" : ""}>Services</div>
         </Link>
         <Link href={"/gallery"} className="font-medium px-2 block hover:text-secondary">
           <div className={pathname == "/gallery" ? "text-secondary-500 focus:text-success" : ""}>Gallery</div>

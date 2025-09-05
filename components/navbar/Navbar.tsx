@@ -15,7 +15,7 @@ const { logoSm, barsIcon } = localData.svgs;
 
 export const navLinks = [
   { title: "Shop", href: "/shop" },
-  { title: "Services", href: "/fabrics" },
+  { title: "Services", href: "/#services" },
   { title: "Gallery", href: "/gallery" },
   { title: "About", href: "/about" },
   { title: "Contact", href: "/contact" },
@@ -44,7 +44,6 @@ export default function Navbar({ children = null }: any) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [height, setHeight] = useState("");
   const navbar = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
 
   useEffect(() => {
     if (!navbar.current) return;
@@ -52,52 +51,67 @@ export default function Navbar({ children = null }: any) {
   }, [navbar]);
 
   return (
-    <nav className="navbar  pt-8  lg:pt-10  " ref={navbar}>
+    <nav className="navbar relative z-3 pt-8  lg:pt-10  " ref={navbar}>
       <div className="top-panel flex items-center justify-center xl:justify-start  gap-7 absolute top-0 z-3 left-0 bg-success w-full rounded-bl-[30px] rounded-br-[30px] px-[10px] py-[10px] ">
         <p className="xl:ml-[15rem] hidden md:block text-white text-xs font-normal">
           Visit our London showroom for expert tailoring and fabric selection
         </p>
-        <a
-          href="#/"
+        <Link
+          href="/booking"
           className="px-2 text-white font-medium text-xs sm:text-sm underline decoration-[rgba(255,255,255,0.6)] hover:decoration-white "
         >
           Book your Appointment
-        </a>
+        </Link>
       </div>
       <div className=" relative z-2 bg-white">
         <div className="container">
           <div className="flex flex-wrap items-center w-full justify-between gap-y-2 gap-x-2  py-4 ">
             <div className="left-block flex items-center gap-1 sm:gap-2">
               <a
-                href="#/"
-                className="link text-[0.688rem] sm:text-xs font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+                target="_blank"
+                href="tel:+44 7701049192"
+                className="link text-[0.688rem] sm:text-xs font-medium px-1 hover:underline"
               >
                 +44 7701049192
               </a>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
               <a
-                href="#/"
-                className="link text-[0.688rem] sm:text-xs font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+                target="_blank"
+                href="mailto:admin@lawrenceandwinslade.com"
+                className="link text-[0.688rem] sm:text-xs font-medium px-1 hover:underline"
               >
                 Email
               </a>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
               <a
-                href="#/"
-                className="link text-[0.688rem] sm:text-xs font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+                href="https://www.instagram.com/lawrenceandwinslade"
+                target="_blank"
+                className="link text-[0.688rem] sm:text-xs font-medium px-1 hover:underline"
               >
                 Inst
               </a>
             </div>
 
             <div className="left-block items-center gap-2 hidden md:flex">
-              <div className="link text-xs font-medium px-1">Fabrics</div>
+              <Link href="/fabrics" className="link text-xs font-medium px-1 hover:underline">
+                Fabrics
+              </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <div className="link text-xs font-medium px-1">Pricing</div>
+              <Link href="/pricing" className="link text-xs font-medium px-1 hover:underline">
+                Pricing
+              </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <div className="link text-xs font-medium px-1">How it Works</div>
+              <Link href="/how-it-works" className="link text-xs font-medium px-1 hover:underline">
+                How it Works
+              </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <div className="link text-xs font-medium px-1">Weddings</div>
+              <Link href="/gallery/wedding-bespoke" className="link text-xs font-medium px-1 hover:underline">
+                Weddings
+              </Link>
+              <div className="dot w-1 h-1 rounded-full bg-dark"></div>
+              <Link href="/journal-blog" className="link text-xs font-medium px-1 hover:underline">
+                Inspiration
+              </Link>
             </div>
 
             <Link
@@ -150,12 +164,12 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
       >
         <div className="flex-1">
           <div className="menu-header">
-            {/* <a
-              href="#/"
+            {/* <Linkink
+              href='/'
               className="px-2 flex justify-center hover:bg-neutral-50 py-3 border-y border-line font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black "
             >
               Shop
-            </a> */}
+            </Linkink> */}
             {navLinks.map((item, index) => {
               return (
                 <Link
@@ -190,48 +204,55 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
             </Link> */}
           </div>
 
-          <div className="menu-body mx-3 py-4 flex justify-between flex-wrap">
-            <a
-              href="#/"
-              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+          <div className="menu-body mx-3 py-4 flex justify-center gap-x-10 flex-wrap max-w-[300px] mx-auto">
+            <Link
+              href="/fabrics"
+              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
             >
               Fabrics
-            </a>
-            <a
-              href="#/"
-              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+            </Link>
+            <Link
+              href="/pricing"
+              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
             >
               Pricing
-            </a>
-            <a
-              href="#/"
-              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+            </Link>
+            <Link
+              href="/how-it-works"
+              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
             >
               How it Works
-            </a>
-            <a
-              href="#/"
-              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium underline px-1 decoration-[rgba(45,45,45,1)] hover:decoration-dark"
+            </Link>
+            <Link
+              href="/gallery/wedding-bespoke"
+              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
             >
               Weddings
-            </a>
+            </Link>
+            <Link
+              href="/journal-blog"
+              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
+            >
+              Inspiration
+            </Link>
+           
           </div>
         </div>
 
         <div className="container">
           <div className="menu-footer border-t border-line flex py-5">
             <div className="flex gap-10 flex-1">
-              <a href="#/privacy-policy" className="text-xs  hover:text-black duration-300">
+              <Link href="/privacy-policy" className="text-xs  hover:text-black duration-300">
                 Privacy Policy
-              </a>
-              <a href="#/terms-of-use" className="text-xs  hover:text-black duration-300">
+              </Link>
+              <Link href="/terms-of-use" className="text-xs  hover:text-black duration-300">
                 Terms of Use
-              </a>
+              </Link>
             </div>
 
-            <a href="#/cookies" className="text-xs  hover:text-black duration-300">
+            <Link href="/cookies" className="text-xs  hover:text-black duration-300">
               Cookies
-            </a>
+            </Link>
           </div>
         </div>
       </div>

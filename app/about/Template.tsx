@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ButtonDemo, Navbar, CarouselDemo, AboutCard, AccordionDemo, ActionCard } from "@/components/index";
+import { ButtonDemo, Navbar, CarouselDemo, AboutCard, AccordionDemo, ActionCard, FAQSection } from "@/components/index";
 import Link from "next/link";
 import Image from "next/image";
 import localData from "@/localData";
@@ -31,7 +31,7 @@ const Template = () => {
         <Navbar>
           <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
             <div className="container flex items-center gap-2">
-              <Link href="/" className="link text-xs font-medium px-1 underline">
+              <Link href="/" className="link text-xs font-medium px-1 hover:underline">
                 Home
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
@@ -46,7 +46,7 @@ const Template = () => {
       <hr className="border-line" />
       <LocationSection />
       <hr className="border-line" />
-      <QuestionsSection />
+      <FAQSection />
       <hr className="border-line" />
       <JournalSection />
     </main>
@@ -442,99 +442,99 @@ const LocationSection = () => {
   );
 };
 
-const QuestionsSection = () => {
-  const items = [
-    {
-      trigger: <h4 className="display-4 !mb-0">What is the difference between made-to-measure and bespoke tailoring?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">How long does it take to make a suit?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">What fabric do you offer?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">Can I provide my own fabric?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">What is the cost of a bespoke suit?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">How should I prepare for my first fitting?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">Do you offer alterations and repairs?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">How often should I get my suit dry cleaned?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-    {
-      trigger: <h4 className="display-4 !mb-0">Do you offer services for women?</h4>,
-      content: (
-        <p className="paragraph-1">
-          Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
-          entirely custom-made from scratch, tailored to your exact specifications and preferences.
-        </p>
-      ),
-    },
-  ];
-  return (
-    <section>
-      <div className="container lg:flex justify-between  lg:gap-60">
-        <h3 className="subtitle text-center 4xl:!mb-[5rem]">FAQ</h3>
-        <AccordionDemo className="accordion-demo-custom sm:max-w-[750px]  " items={items} />
-      </div>
-    </section>
-  );
-};
+// const QuestionsSection = () => {
+//   const items = [
+//     {
+//       trigger: <h4 className="display-4 !mb-0">What is the difference between made-to-measure and bespoke tailoring?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">How long does it take to make a suit?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">What fabric do you offer?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">Can I provide my own fabric?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">What is the cost of a bespoke suit?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">How should I prepare for my first fitting?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">Do you offer alterations and repairs?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">How often should I get my suit dry cleaned?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//     {
+//       trigger: <h4 className="display-4 !mb-0">Do you offer services for women?</h4>,
+//       content: (
+//         <p className="paragraph-1">
+//           Made-to-measure suits are crafted from a pre-existing pattern adjusted to your measurements, while bespoke suits are
+//           entirely custom-made from scratch, tailored to your exact specifications and preferences.
+//         </p>
+//       ),
+//     },
+//   ];
+//   return (
+//     <section>
+//       <div className="container lg:flex justify-between  lg:gap-60">
+//         <h3 className="subtitle text-center 4xl:!mb-[5rem]">FAQ</h3>
+//         <AccordionDemo className="accordion-demo-custom sm:max-w-[750px]  " items={items} />
+//       </div>
+//     </section>
+//   );
+// };
 
 const JournalSection = () => {
   const { actionCards } = useGlobalContext();

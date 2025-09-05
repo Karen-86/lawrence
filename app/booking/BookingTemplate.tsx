@@ -5,8 +5,6 @@ import { InlineWidget, PopupButton } from "react-calendly";
 import { Navbar } from "@/components/index";
 import Link from "next/link";
 
-
-
 const Template = () => {
   return (
     <main className="booking-page">
@@ -14,7 +12,7 @@ const Template = () => {
         <Navbar>
           <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
             <div className="container flex items-center gap-2">
-              <Link href="/" className="link text-xs font-medium px-1 underline">
+              <Link href="/" className="link text-xs font-medium px-1 hover:underline">
                 Home
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
@@ -39,8 +37,11 @@ const Template = () => {
               url="https://calendly.com/admin-lawrenceandwinslade"
               className="relative z-2"
               styles={{ width: "100%", height: "100%", minHeight: "500px" }}
-              // pageSettings={{ hideLandingPageDetails: true }}
-              // prefill={{}}
+              // pageSettings={{
+              //   hideLandingPageDetails: true,
+              //   hideEventTypeDetails: true,
+              //   primaryColor: "000000",
+              // }}
             />
             {/* {loading && (
             <div className="absolute top-[50%] z-1 left-[50%] transform-[translate(-50%,-50%)] flex justify-center items-center bg-white">
@@ -50,7 +51,6 @@ const Template = () => {
           </div>
         </div>
       </section>
-      
     </main>
   );
 };

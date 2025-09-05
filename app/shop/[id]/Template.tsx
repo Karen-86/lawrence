@@ -9,6 +9,7 @@ import { motion, useInView } from "framer-motion";
 import { useGlobalContext } from "@/context";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useParams } from "next/navigation";
+import ProductPage from "./Product";
 
 const {
   articleCoverImage,
@@ -21,14 +22,14 @@ const {
 const { shareIcon, heartIcon, solidHeartIcon, articleSignIcon } = localData.svgs;
 
 const Template = () => {
-  const { article } = useParams()
-  const { actionCards } = useGlobalContext()
-  
-  const currentArticle = actionCards.find((item:any)=>item.slug == article)
+  const { id } = useParams();
+  const { shopCards } = useGlobalContext();
+
+  const currentShopCard = shopCards.find((item: any) => item.id == id);
 
   return (
     <main className="article-page" id="article-page">
-      <header className="hero  min-h-[100vh] flex flex-col">
+      <header className="hero flex flex-col">
         <Navbar>
           <div className="breadcrumbs  border-y border-line py-4 sm:py-5">
             <div className="container flex items-center gap-2">
@@ -40,20 +41,40 @@ const Template = () => {
                 Journal
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">{currentArticle.title}</div>
+              <div className="link text-xs font-medium px-1 pointer-events-none text-secondary-500">{currentShopCard.title}</div>
             </div>
           </div>
         </Navbar>
-        <ShowcaseSection />
+        {/* <ShowcaseSection /> */}
       </header>
-      <ArticleSection />
-      <DecorativeSection />
-      <Article2Section />
+        <ProductSection productId={id} />
+      {/* <ArticleSection /> */}
+      {/* <DecorativeSection /> */}
+      {/* <Article2Section /> */}
       <hr className="border-line" />
-      <JournalSection />
-      <hr className="border-line" />
+      {/* <JournalSection /> */}
+      {/* <hr className="border-line" /> */}
       <FollowUsSection />
     </main>
+  );
+};
+
+const ProductSection = ({ productId }: any) => {
+  const iframeUrls: Record<string, string> = {
+    trouser3D: "https://view.moda-meta.com/widget?clientId=client1379&product=trouser3D&view=main",
+    // add more products
+  };
+
+  const iframeSrc = iframeUrls.trouser3D;
+
+  if (!iframeSrc) return <p>Product not found</p>;
+
+  return (
+    <section className=" !pt-[4rem]">
+      <div style={{ width: "100%", height: "100vh" }}>
+        <iframe src={iframeSrc} width="100%" height="100%" style={{ border: "none" }} title="3D Product Viewer" allowFullScreen />
+      </div>
+    </section>
   );
 };
 
@@ -62,10 +83,10 @@ const ShowcaseSection = () => {
 
   const [inView1, setIsInView1] = useState(false);
 
-   const { article } = useParams()
-  const { actionCards } = useGlobalContext()
-  
-  const currentArticle = actionCards.find((item:any)=>item.slug == article)
+  const { id } = useParams();
+  const { shopCards } = useGlobalContext();
+
+  const currentShopCard = shopCards.find((item: any) => item.id == id);
 
   return (
     <div className=" flex-1  pb-[2rem]  flex flex-col items-center  ">
@@ -78,7 +99,7 @@ const ShowcaseSection = () => {
         data-lazy="fade"
       >
         <Image
-          src={currentArticle.image}
+          src={currentShopCard.image}
           fill={true}
           alt="background image"
           className="absolute top-0 left-0 w-full h-full object-cover object-[50%_35%]"
@@ -87,7 +108,7 @@ const ShowcaseSection = () => {
         <div className="container flex-1   relative flex gap-10 flex-col lg:flex-row items-center  justify-center ">
           <div className="showcase-content text-white text-center ">
             <div className="text-[0.625rem] sm:text-sm uppercase mb-[2rem]">article</div>
-            <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">{currentArticle.title}</h1>
+            <h1 className="text-[2.188rem] leading-[1.1] sm:text-4xl max-w-[400px] sm:max-w-[500px]">{currentShopCard.title}</h1>
           </div>
         </div>
       </motion.div>
@@ -302,5 +323,6 @@ const JournalSection = () => {
     </section>
   );
 };
+
 
 export default Template;
