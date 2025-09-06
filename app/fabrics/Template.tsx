@@ -5,7 +5,7 @@ import Image from "next/image";
 import localData from "@/localData";
 import { ButtonDemo, Navbar } from "@/components/index";
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
 const {
   fabricsCoverImage,
@@ -157,14 +157,16 @@ const FabricsSample = ({ image, icon, description, isLast }: any) => {
 
   return (
     <motion.div
-      className={`fabrics-catalog ${!isLast ? "mb-[60px] sm:mb-[150px] 4xl:mb-[200px]": ""}  ${inView1 ? "lazy-animate" : ""} `}
+      className={`fabrics-catalog ${!isLast ? "mb-[60px] sm:mb-[150px] 4xl:mb-[200px]" : ""}  ${inView1 ? "lazy-animate" : ""} `}
       viewport={{ amount: 0.3 }}
       onViewportEnter={() => setIsInView1(true)}
       data-lazy="fade"
     >
       <div className=" flex items-center justify-center  relative h-[400px] sm:h-[500px] 4xl:h-[610px] mb-[1.5rem] sm:mb-[2.5rem] 4xl:mb-[4.625rem]">
         <Image src={image} fill={true} alt="image" className="object-cover   absolute top-0 left-0 w-full h-full" />
-        <ButtonDemo text="shop now" className="relative " />
+        <Link href="/shop">
+          <ButtonDemo text="shop now" className="relative " />
+        </Link>
       </div>
       <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
         <img className="max-w-[150px] ms:max-w-[190px] max-h-[55px] sm:max-h-[60px] object-contain mb-[1rem]" src={icon} alt="" />
@@ -216,7 +218,7 @@ const FabricsCatalogSection = () => {
       description: `   Based in the heart of Yorkshire’s textile district, Huddersfield Fine Worsteds embodies British heritage and
               craftsmanship. Their fabrics, blending durability with elegance, are a trusted choice for discerning gentlemen
               worldwide.`,
-      isLast: true
+      isLast: true,
     },
   ];
 
@@ -240,7 +242,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img
@@ -264,7 +268,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img
@@ -288,7 +294,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img
@@ -312,7 +320,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img
@@ -335,7 +345,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img
@@ -359,7 +371,9 @@ const FabricsCatalogSection = () => {
               alt="image"
               className="object-cover   absolute top-0 left-0 w-full h-full"
             />
+            <Link href='/shop'>
             <ButtonDemo text="shop now" className="relative " />
+            </Link>
           </div>
           <div className="fabrics-catalog-footer sm:flex justify-between gap-20">
             <img

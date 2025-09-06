@@ -332,15 +332,15 @@ const BespokeSection = () => {
         />
         <div className="overlay absolute bg-[rgba(0,0,0,0.3)]  top-0 left-0 w-full h-full"></div>
 
-        <div className="container flex-1 flex relative ">
+        <div className="container flex-1 flex relative " id="bespoke-process">
           <div className="relative flex-1 ">
             <div className="col col-1 xl:absolute top-[13%] right-[0%] max-w-[470px]  4xl:max-w-[590px] text-center xl:text-left mx-auto mb-[6rem]">
               <h2 className="subtitle  !text-white !mb-[2.5rem] 4xl:!mb-[3.5rem]">Our Bespoke Process</h2>
               <h3 className="text-[2.188rem] 4xl:text-[3.2rem] text-white leading-[1.1] mb-[4rem] 4xl:mb-[6rem]">
                 From consultation to craftsmanship, experience the journey of creating your perfect suit
               </h3>
-              <Link href="/booking">
-                <ButtonDemo text="Book a Fitting" className="" />
+              <Link href="/contact">
+                <ButtonDemo text="Book Your Appointment" className="!min-w-[290px]" />
               </Link>
             </div>
 

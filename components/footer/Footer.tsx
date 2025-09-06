@@ -89,7 +89,7 @@ const Footer = () => {
             <div className="text-xs sm:text-md text-[rgba(255,255,255,0.7)]">9am — 6pm</div>
           </div>
 
-          <div className="col flex flex-col items-start">
+          <nav className="col flex flex-col items-start">
             <h4 className="text-sm sm:text-md font-medium font-montserrat mb-[1.6rem]">Quick links</h4>
             <a
               href="/"
@@ -127,7 +127,19 @@ const Footer = () => {
             >
               Contact
             </Link>
-          </div>
+            <Link
+              href="/journal-blog"
+              className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
+            >
+              The Journal  
+            </Link>
+            <Link
+              href="/about/#about-us-FAQ"
+              className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
+            >
+              FAQ
+            </Link>
+          </nav>
 
           <div className="col  flex flex-col items-start order-3 sm:order-0">
             <h4 className="text-sm sm:text-md font-medium font-montserrat mb-[1.6rem]">Contact Info</h4>

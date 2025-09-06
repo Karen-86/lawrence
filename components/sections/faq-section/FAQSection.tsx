@@ -1,7 +1,7 @@
 import React from "react";
 import { AccordionDemo } from "@/components/index";
 
-const FAQSection = () => {
+const FAQSection = ({id = ''}) => {
   const items = [
     {
       trigger: <h4 className="display-4 !mb-0">What is the difference between made-to-measure and bespoke tailoring?</h4>,
@@ -86,7 +86,7 @@ const FAQSection = () => {
     },
   ];
   return (
-    <section>
+    <section id={id}>
       <div className="container lg:flex justify-between  lg:gap-60">
         <h3 className="subtitle text-center 4xl:!mb-[5rem]">FAQ</h3>
         <AccordionDemo className="accordion-demo-custom sm:max-w-[750px]  " items={items} />

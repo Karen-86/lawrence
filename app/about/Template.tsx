@@ -46,7 +46,7 @@ const Template = () => {
       <hr className="border-line" />
       <LocationSection />
       <hr className="border-line" />
-      <FAQSection />
+      <FAQSection id="about-us-FAQ" />
       <hr className="border-line" />
       <JournalSection />
     </main>

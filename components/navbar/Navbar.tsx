@@ -101,13 +101,10 @@ export default function Navbar({ children = null }: any) {
                 Pricing
               </Link>
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <Link href="/how-it-works" className="link text-xs font-medium px-1 hover:underline">
+              <Link href="/#bespoke-process" className="link text-xs font-medium px-1 hover:underline">
                 How it Works
               </Link>
-              <div className="dot w-1 h-1 rounded-full bg-dark"></div>
-              <Link href="/gallery/wedding-bespoke" className="link text-xs font-medium px-1 hover:underline">
-                Weddings
-              </Link>
+            
               <div className="dot w-1 h-1 rounded-full bg-dark"></div>
               <Link href="/journal-blog" className="link text-xs font-medium px-1 hover:underline">
                 Inspiration
@@ -204,7 +201,7 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
             </Link> */}
           </div>
 
-          <div className="menu-body mx-3 py-4 flex justify-center gap-x-10 flex-wrap max-w-[300px] mx-auto">
+          <div className="menu-body py-4 flex justify-center gap-x-10 flex-wrap max-w-[300px] mx-auto">
             <Link
               href="/fabrics"
               className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
@@ -218,17 +215,12 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
               Pricing
             </Link>
             <Link
-              href="/how-it-works"
+              href="/#bespoke-process"
               className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
             >
               How it Works
             </Link>
-            <Link
-              href="/gallery/wedding-bespoke"
-              className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"
-            >
-              Weddings
-            </Link>
+        
             <Link
               href="/journal-blog"
               className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"

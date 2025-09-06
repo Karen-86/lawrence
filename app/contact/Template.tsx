@@ -71,7 +71,8 @@ const ShowcaseSection = () => {
 
         <div className=" h-[900px]  md:h-[900px] xl:h-[660px] relative mb-0">
           <InlineWidget
-            url="https://calendly.com/admin-lawrenceandwinslade"
+            
+            url="https://calendly.com/admin-lawrenceandwinslade?hide_gdpr_banner=1"
             className="relative z-2"
             styles={{ width: "100%", height: "100%", minHeight: "500px" }}
             // pageSettings={{ hideLandingPageDetails: true }}

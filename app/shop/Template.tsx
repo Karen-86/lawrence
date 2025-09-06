@@ -49,14 +49,14 @@ const Template = () => {
       </header>
       <ShopSection />
       <hr className="border-line" />
-      <TestimonialsSection />
+      {/* <TestimonialsSection />
       <hr className="border-line" />
       <LocationSection />
       <hr className="border-line" />
       <FAQSection />
       <hr className="border-line" />
       <JournalSection />
-      <hr className="border-line" />
+      <hr className="border-line" /> */}
       <FollowUsSection/>
     </main>
   );
@@ -108,7 +108,7 @@ const ShowcaseSection = () => {
       snap: (
         <div className="tracking-[2px] ">
           1<span className="text-sm  ml-1">/</span>
-          <span className="text-lg">1</span>
+          <span className="text-lg">3</span>
         </div>
       ),
     },
@@ -119,8 +119,8 @@ const ShowcaseSection = () => {
 
       snap: (
         <div className="tracking-[2px] ">
-          1<span className="text-sm  ml-1">/</span>
-          <span className="text-lg">2</span>
+          2<span className="text-sm  ml-1">/</span>
+          <span className="text-lg">3</span>
         </div>
       ),
     },
@@ -131,7 +131,7 @@ const ShowcaseSection = () => {
 
       snap: (
         <div className="tracking-[2px] ">
-          1<span className="text-sm  ml-1">/</span>
+          3<span className="text-sm  ml-1">/</span>
           <span className="text-lg">3</span>
         </div>
       ),

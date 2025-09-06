@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import localData from "@/localData";
 import { motion } from "framer-motion";
-import { InlineWidget } from "react-calendly";
 
 const {
   sliderSample1Image,
