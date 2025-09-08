@@ -15,7 +15,7 @@ export { CheckboxDemo } from "./checkbox/CheckboxDemo.tsx";
 export { SelectScrollable } from "./select/select-scrollable/SelectScrollable.tsx";
 export { DialogDemo } from "./dialog/DialogDemo.tsx";
 export { CarouselSliderDemo } from "./carousel-slider/CarouselSliderDemo.tsx";
-
+export { DropdownMenuDemo } from "./dropdown-menu/DropdownMenuDemo.tsx";
 
 
 

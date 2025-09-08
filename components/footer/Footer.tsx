@@ -131,7 +131,7 @@ const Footer = () => {
               href="/journal-blog"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
-              The Journal  
+              The Journal
             </Link>
             <Link
               href="/about/#about-us-FAQ"
@@ -143,13 +143,21 @@ const Footer = () => {
 
           <div className="col  flex flex-col items-start order-3 sm:order-0">
             <h4 className="text-sm sm:text-md font-medium font-montserrat mb-[1.6rem]">Contact Info</h4>
-            <a
+            {/* <a
               target="_blank"
               href="https://www.google.com/maps?q=21+Knightsbridge,+London,+SW1X+7L"
               rel="noopener noreferrer"
               className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
             >
               21 Knightsbridge, London, SW1X 7LY
+            </a> */}
+            <a
+              target="_blank"
+              href="https://www.google.com/maps?q=12+Lower+Grosvenor+Place,+London,+SW1W+0EX"
+              rel="noopener noreferrer"
+              className="text-xs sm:text-md text-[rgba(255,255,255,0.7)] mb-[1rem] sm:mb-[1.2rem] hover:text-white duration-300"
+            >
+              12 Lower Grosvenor Place, London, SW1W 0EX
             </a>
             <a
               target="_blank"

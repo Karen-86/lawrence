@@ -58,11 +58,11 @@ export function NavigationMenuDemo() {
           <div className={pathname == "/about" ? "text-secondary-500 focus:text-success" : ""}>About</div>
         </Link>
         <Link href={"/contact"} className="font-medium px-2 block hover:text-secondary">
-          <div className={pathname == "/contact" ? "text-secondary-500 focus:text-success" : ""}>Contact</div>
+          <div className={pathname == "/contact" ? "text-secondary-500 focus:text-success" : ""}>Book your Appointment</div>
         </Link>
-        <Link href={"/booking"} className="font-medium px-2 block hover:text-secondary">
+        {/* <Link href={"/booking"} className="font-medium px-2 block hover:text-secondary">
           <div className={pathname == "/booking" ? "text-secondary-500 focus:text-success" : ""}>Book a fitting</div>
-        </Link>
+        </Link> */}
         {/* <Link
           href="/booking"
           className="px-2 flex  font-semibold text-sm underline decoration-[rgba(0,0,0,0.4)] hover:decoration-black "

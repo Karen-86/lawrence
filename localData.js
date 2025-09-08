@@ -70,14 +70,14 @@ const images = {
   shopMobileSample1Image: "/assets/images/rest/shop-page/shop-mobile-cover.png",
   shopSample2Image: "/assets/images/rest/shop-page/image-2.png",
   shopSample3Image: "/assets/images/rest/shop-page/image-3.png",
-  
+
   // category
   categoryFormalBespokeCoverImage: "/assets/images/rest/category/formal-bespoke/cover.png",
   categoryCasualBespokeCoverImage: "/assets/images/rest/category/casual-bespoke/cover.png",
   categoryWeddingBespokeCoverImage: "/assets/images/rest/category/wedding-bespoke/cover.png",
   categoryWomenBespokeCoverImage: "/assets/images/rest/category/women-bespoke/cover.png",
   categoryFabricsCoverImage: "/assets/images/rest/category/fabrics/cover.png",
-  
+
   // gallery
   gallerySample1Image: "/assets/images/rest/category/gallery/image-1.png",
   gallerySample2Image: "/assets/images/rest/category/gallery/image-2.png",
@@ -91,7 +91,7 @@ const images = {
   gallerySample10Image: "/assets/images/rest/category/gallery/image-10.png",
   gallerySample11Image: "/assets/images/rest/category/gallery/image-11.png",
   gallerySample12Image: "/assets/images/rest/category/gallery/image-12.png",
-  
+
   // follow us slider
   sliderSample1Image: "/assets/images/rest/follow-us-slider/image-1.png",
   sliderSample2Image: "/assets/images/rest/follow-us-slider/image-2.png",
@@ -519,6 +519,20 @@ const localData = {
       <svg className="w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
         <path d="M240 363.3L240 576L356 576L356 363.3L442.5 363.3L460.5 265.5L356 265.5L356 230.9C356 179.2 376.3 159.4 428.7 159.4C445 159.4 458.1 159.8 465.7 160.6L465.7 71.9C451.4 68 416.4 64 396.2 64C289.3 64 240 114.5 240 223.4L240 265.5L174 265.5L174 363.3L240 363.3z" />
       </svg>
+    ),
+    facebook2Icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+        <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L258.2 544L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96z" />
+      </svg>
+    ),
+    twitterIcon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+        <path d="M523.4 215.7C523.7 220.2 523.7 224.8 523.7 229.3C523.7 368 418.1 527.9 225.1 527.9C165.6 527.9 110.4 510.7 64 480.8C72.4 481.8 80.6 482.1 89.3 482.1C138.4 482.1 183.5 465.5 219.6 437.3C173.5 436.3 134.8 406.1 121.5 364.5C128 365.5 134.5 366.1 141.3 366.1C150.7 366.1 160.1 364.8 168.9 362.5C120.8 352.8 84.8 310.5 84.8 259.5L84.8 258.2C98.8 266 115 270.9 132.2 271.5C103.9 252.7 85.4 220.5 85.4 184.1C85.4 164.6 90.6 146.7 99.7 131.1C151.4 194.8 229 236.4 316.1 240.9C314.5 233.1 313.5 225 313.5 216.9C313.5 159.1 360.3 112 418.4 112C448.6 112 475.9 124.7 495.1 145.1C518.8 140.6 541.6 131.8 561.7 119.8C553.9 144.2 537.3 164.6 515.6 177.6C536.7 175.3 557.2 169.5 576 161.4C561.7 182.2 543.8 200.7 523.4 215.7z" /></svg>
+
+    ),
+    pinterestIcon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+        <path d="M568 320C568 457 457 568 320 568C294.4 568 269.8 564.1 246.6 556.9C256.7 540.4 271.8 513.4 277.4 491.9C280.4 480.3 292.8 432.9 292.8 432.9C300.9 448.3 324.5 461.4 349.6 461.4C424.4 461.4 478.3 392.6 478.3 307.1C478.3 225.2 411.4 163.9 325.4 163.9C218.4 163.9 161.5 235.7 161.5 314C161.5 350.4 180.9 395.7 211.8 410.1C216.5 412.3 219 411.3 220.1 406.8C220.9 403.4 225.1 386.5 227 378.7C227.6 376.2 227.3 374 225.3 371.6C215.2 359.1 207 336.3 207 315C207 260.3 248.4 207.4 319 207.4C379.9 207.4 422.6 248.9 422.6 308.3C422.6 375.4 388.7 421.9 344.6 421.9C320.3 421.9 302 401.8 307.9 377.1C314.9 347.6 328.4 315.8 328.4 294.5C328.4 275.5 318.2 259.6 297 259.6C272.1 259.6 252.1 285.3 252.1 319.8C252.1 341.8 259.5 356.6 259.5 356.6C259.5 356.6 235 460.4 230.5 479.8C225.5 501.2 227.5 531.4 229.6 551C137.4 514.9 72 425.1 72 320C72 183 183 72 320 72C457 72 568 183 568 320z" /></svg>
     ),
     instagramIcon: (
       <svg className="w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">

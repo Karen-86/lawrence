@@ -18,8 +18,8 @@ export const navLinks = [
   { title: "Services", href: "/#services" },
   { title: "Gallery", href: "/gallery" },
   { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
-  { title: "Book a Fitting", href: "/booking" },
+  { title: "Book your Appointment", href: "/contact" },
+  // { title: "Book a Fitting", href: "/booking" },
 ];
 
 export const dropdownLinksModules: { title: string; href: string; description: string }[] = [
@@ -201,7 +201,7 @@ const Menu = ({ isMenuOpen = false, height = "" }) => {
             </Link> */}
           </div>
 
-          <div className="menu-body py-4 flex justify-center gap-x-10 flex-wrap max-w-[300px] mx-auto">
+          <div className="menu-body py-4 flex justify-center gap-x-10 flex-wrap  mx-auto">
             <Link
               href="/fabrics"
               className="link text-[0.688rem] sm:text-xs flex justify-center py-3 font-medium px-1 hover:underline"

@@ -24,9 +24,7 @@ const {
   shopSample1Image,
   shopSample2Image,
   shopSample3Image,
-  testimonialSample1Image,
-  testimonialSample2Image,
-  followUsDecorativeCoverImage,
+
 } = localData.images;
 const { gridTwoIcon, gridThreeIcon, gridFourIcon, filterIcon } = localData.svgs;
 
@@ -49,14 +47,6 @@ const Template = () => {
       </header>
       <ShopSection />
       <hr className="border-line" />
-      {/* <TestimonialsSection />
-      <hr className="border-line" />
-      <LocationSection />
-      <hr className="border-line" />
-      <FAQSection />
-      <hr className="border-line" />
-      <JournalSection />
-      <hr className="border-line" /> */}
       <FollowUsSection/>
     </main>
   );
@@ -393,147 +383,5 @@ const ShopSection = () => {
   );
 };
 
-const LocationSection = () => {
-  return (
-    <section className="location " id="location">
-      <div className="container">
-        <h3 className="subtitle text-center 4xl:!mb-[5rem]">Location</h3>
-
-        <h2 className="display-2 text-center max-w-[900px] 4xl:max-w-[1200px] mx-auto mb-[3rem] 4xl:mb-[4rem]">
-          Our showroom in Knightsbridge offers a luxurious, welcoming environment to explore our process and meet our team
-        </h2>
-        <p className="paragraph-1 text-center max-w-[470px] mx-auto mb-[2.5rem] sm:mb-[5.5rem]">
-          Located near Knightsbridge station and Hyde Park Corner, it’s just a 10-minute walk from Victoria.
-        </p>
-      </div>
-
-      <div className="map-wrapper h-[400px] sm:h-[80vh] mb-[2.5rem] sm:mb-[5rem] ">
-        <iframe
-          src="https://www.google.com/maps?q=21+Knightsbridge,+London,+SW1X+7LY&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-
-      <div className="container flex justify-center">
-        <Link href="/booking">
-          <ButtonDemo text="Book a Fitting" color="black" className="" />
-        </Link>
-      </div>
-    </section>
-  );
-};
-
-const JournalSection = () => {
-  const { actionCards } = useGlobalContext();
-  const [inView1, setIsInView1] = useState(false);
-
-  return (
-    <section>
-      <div className="container">
-        <div className="lg:flex lg:gap-10">
-          <h3 className="subtitle text-center lg:text-start 4xl:!mb-[5rem] min-w-[20%] 4xl:min-w-[17%]">The Journal</h3>
-          <div className="grid md:grid-cols-2 gap-[20px] xl:gap-[50px] flex-1">
-            <ActionCard {...actionCards[0]} />
-            <ActionCard {...actionCards[1]} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const TestimonialsSection = () => {
-  const [inView1, setIsInView1] = useState(false);
-  const [inView2, setIsInView2] = useState(false);
-
-  return (
-    <section className="testimonials " id="testimonials">
-      <div className=" sm:px-[45px]">
-        <h2 className="subtitle text-center">TESTIMONIALS</h2>
-
-        <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem] sm:mb-[2rem]">
-          <div className="testimonial-content bg-[rgb(252,252,252)] px-[20px] sm:px-[40px] xl:px-[60px] py-[40px] flex ">
-            <div className="max-w-[690px] mx-auto  flex-1 flex flex-col justify-evenly">
-              <span className="font-baskervville text-[1.875rem] font-bold mb-[1rem] block leading-[1]">“”</span>
-              <div className="center mb-[3rem]">
-                <h4 className=" text-[1.125rem] 4xl:text-[1.875rem] leading-[1.2] mb-[1.5rem] 4xl:mb-[2rem]">
-                  From the moment I walked into <br /> Lawrence & Winslade, I knew I was in expert hands
-                </h4>
-                <p className="text-sm xl:text-md 4xl:text-[1.125rem] text-secondary-800 leading-[1.7]">
-                  The consultation was thorough, the fabric selection was incredible, and the attention to detail during fittings
-                  was exceptional. Every stitch and seam reflects true craftsmanship, and the final suit exceeded all my
-                  expectations. I now feel confident that I have a wardrobe of pieces that are truly my own.
-                </p>
-              </div>
-
-              <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- James R., London</div>
-            </div>
-          </div>
-          <motion.div
-            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
-              inView1 ? "lazy-animate" : ""
-            } `}
-            viewport={{ amount: 0.3 }}
-            onViewportEnter={() => setIsInView1(true)}
-            data-lazy="fade"
-          >
-            <Image
-              src={testimonialSample1Image}
-              fill={true}
-              alt="background image"
-              className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
-
-        <div className="testimonial grid lg:grid-cols-2 sm:gap-[2rem]">
-          <div className="lg:order-2 testimonial-content bg-[rgb(252,252,252)] px-[20px] sm:px-[40px] xl:px-[60px] py-[40px] flex ">
-            <div className="max-w-[690px] mx-auto  flex-1 flex flex-col justify-evenly">
-              <span className="font-baskervville text-[1.875rem] font-bold mb-[1rem] block leading-[1]">“”</span>
-              <div className="center mb-[3rem]">
-                <h4 className=" text-[1.125rem] 4xl:text-[1.875rem] leading-[1.2] mb-[1.5rem] 4xl:mb-[2rem]">
-                  I’ve had bespoke suits before, but the experience with Lawrence & Winslade was on a completely different level
-                </h4>
-                <p className="text-sm xl:text-md 4xl:text-[1.125rem] text-secondary-800 leading-[1.7]">
-                  They take the time to understand not just your measurements, but your lifestyle, your style preferences, and
-                  even your personality. The fittings were relaxed yet precise, and the end result is a suit that fits perfectly,
-                  feels luxurious, and turns heads everywhere I go. Exceptional service from start to finish.
-                </p>
-              </div>
-
-              <div className="text-xs 4xl:text-sm text-secondary-500 italic text-right ">- Alexander M., Manchester</div>
-            </div>
-          </div>
-          <motion.div
-            className={`testimonial-cover relative h-0 w-full pt-[130%] md:pt-[40%] lg:pt-[100%] xl:pt-[73%] ${
-              inView2 ? "lazy-animate" : ""
-            } `}
-            viewport={{ amount: 0.3 }}
-            onViewportEnter={() => setIsInView2(true)}
-            data-lazy="fade"
-          >
-            <Image
-              src={testimonialSample2Image}
-              fill={true}
-              alt="background image"
-              className="absolute top-0 left-0 w-full h-full object-cover"
-            />
-          </motion.div>
-        </div>
-
-        <div className="flex justify-center mt-15 sm:mt-20">
-          <Link href="/testimonials">
-            <ButtonDemo text="view more" className=" border border-secondary-100 !min-w-[280px]" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 export default Template;

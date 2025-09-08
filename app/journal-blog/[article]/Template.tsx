@@ -3,28 +3,23 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import localData from "@/localData";
-import { TooltipDemo, Navbar, ActionCard, ButtonDemo, FollowUsSection } from "@/components/index";
+import { TooltipDemo, Navbar, ActionCard, ButtonDemo, FollowUsSection, DropdownMenuDemo } from "@/components/index";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useGlobalContext } from "@/context";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useParams } from "next/navigation";
 
-const {
-  articleCoverImage,
-  articleMobileCoverImage,
-  journalSample1Image,
-  articleDecorativeCoverImage,
-  articleDecorativeMobileCoverImage,
-  followUsDecorativeCoverImage,
-} = localData.images;
-const { shareIcon, heartIcon, solidHeartIcon, articleSignIcon } = localData.svgs;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lawrence-sable.vercel.app/";
+
+const { articleDecorativeCoverImage, articleDecorativeMobileCoverImage } = localData.images;
+const { shareIcon, heartIcon, solidHeartIcon, facebook2Icon, twitterIcon, pinterestIcon } = localData.svgs;
 
 const Template = () => {
-  const { article } = useParams()
-  const { actionCards } = useGlobalContext()
-  
-  const currentArticle = actionCards.find((item:any)=>item.slug == article)
+  const { article } = useParams();
+  const { actionCards } = useGlobalContext();
+
+  const currentArticle = actionCards.find((item: any) => item.slug == article);
 
   return (
     <main className="article-page" id="article-page">
@@ -62,10 +57,10 @@ const ShowcaseSection = () => {
 
   const [inView1, setIsInView1] = useState(false);
 
-   const { article } = useParams()
-  const { actionCards } = useGlobalContext()
-  
-  const currentArticle = actionCards.find((item:any)=>item.slug == article)
+  const { article } = useParams();
+  const { actionCards } = useGlobalContext();
+
+  const currentArticle = actionCards.find((item: any) => item.slug == article);
 
   return (
     <div className=" flex-1  pb-[2rem]  flex flex-col items-center  ">
@@ -98,6 +93,59 @@ const ShowcaseSection = () => {
 const ArticleSection = () => {
   const [isFavouriteCard, setIsFavouriteCard] = useState(false);
 
+  const data = [
+    {
+      id: "1",
+      content: (
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl + "/" + "imageURL")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#3b5998] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {facebook2Icon}Share on Facebook{" "}
+        </a>
+      ),
+      isChecked: false,
+    },
+    {
+      id: "2",
+      content: (
+        <a
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("shareText")}&url=${encodeURIComponent(
+            siteUrl + "/" + "imageURL"
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#1da1f2] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {twitterIcon}Share on Twitter{" "}
+        </a>
+      ),
+      isChecked: false,
+    },
+    {
+      id: "3",
+      content: (
+        <a
+          href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
+            siteUrl + "/" + "imageURL"
+          )}&media=${encodeURIComponent(siteUrl + "/" + "imageURL")}&description=${encodeURIComponent("shareText")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#bd081c] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {pinterestIcon}Pin it
+        </a>
+      ),
+      isChecked: false,
+    },
+  ];
+
+  const callback = (items: any) => {
+    console.log(items);
+  };
+
   return (
     <section>
       <div className="container max-w-[1300px] 4xl:max-w-[1500px] 4xl:pl-[150px] md:ml-0 text-center md:text-left">
@@ -108,14 +156,30 @@ const ArticleSection = () => {
             <h3 className="display-2 mb-[2rem] sm:mb-[4rem] max-w-[300px] lg:max-w-full">The Foundation of Timeless Style</h3>
             <div className="action-bar flex gap-3 items-center justify-center md:justify-start">
               <div className="col border bg-white  flex items-center justify-center">
-                <TooltipDemo
+                <DropdownMenuDemo
+                  trigger={<div className="w-[40px] h-[40px]  p-[10px] cursor-pointer">{shareIcon}</div>}
+                  defaultItems={data}
+                  callback={callback}
+                  triggerClassName={`dropdown-menu-demo-trigger-custom`}
+                  contentClassName={`dropdown-menu-demo-content-custom max-w-[fit-content]`}
+                />
+
+                {/* <TooltipDemo
                   contentClassName="bg-white text-dark shadow-[-1px_-1px_3px_rgba(17,17,17,0.1)] "
                   trigger={<div className="w-[40px] h-[40px]  p-[10px] cursor-pointer">{shareIcon}</div>}
                   content={<div className="">Share</div>}
-                />
+                /> */}
               </div>
               <div className="col border bg-white  flex items-center justify-center">
-                <TooltipDemo
+                <div
+                  className={`w-[40px] h-[40px] ${isFavouriteCard ? "p-[7px]" : "p-[10px]"} cursor-pointer ${
+                    isFavouriteCard ? "text-red-600" : ""
+                  }`}
+                  onClick={() => setIsFavouriteCard(!isFavouriteCard)}
+                >
+                  {isFavouriteCard ? solidHeartIcon : heartIcon}
+                </div>
+                {/* <TooltipDemo
                   contentClassName="bg-white text-dark shadow-[-1px_-1px_3px_rgba(17,17,17,0.1)]"
                   trigger={
                     <div
@@ -128,7 +192,7 @@ const ArticleSection = () => {
                     </div>
                   }
                   content={<div className="">{!isFavouriteCard ? "Add Favourite" : "Favourite"}</div>}
-                />
+                /> */}
               </div>
               <div className="col border bg-white text-xs font-medium">
                 <div className="flex items-center gap-3 h-[40px]  p-2">

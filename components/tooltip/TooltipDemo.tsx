@@ -20,7 +20,7 @@ export function TooltipDemo({
   align = "center",
 }: TooltipoDemoProps) {
   return (
-    <TooltipProvider disableHoverableContent>
+    <TooltipProvider disableHoverableContent >
       <Tooltip>
         <TooltipTrigger asChild>{trigger || <Button variant="outline">Hover</Button>}</TooltipTrigger>
         <TooltipContent

@@ -111,7 +111,7 @@ const LocationSection = () => {
 
       <div className="map-wrapper h-[400px] sm:h-[80vh]">
         <iframe
-          src="https://www.google.com/maps?q=21+Knightsbridge,+London,+SW1X+7LY&output=embed"
+          src="https://www.google.com/maps?q=12+Lower+Grosvenor+Place,+London,+SW1W+0EX&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}

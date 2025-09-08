@@ -3,15 +3,70 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import localData from "@/localData";
-import { TooltipDemo, ButtonDemo } from "@/components/index";
+import { TooltipDemo, ButtonDemo, DropdownMenuDemo } from "@/components/index";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const { shareIcon, heartIcon, solidHeartIcon } = localData.svgs;
+const { shareIcon, heartIcon, solidHeartIcon, facebook2Icon, twitterIcon, pinterestIcon } = localData.svgs;
 
-const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourite = false, isBarHidden = false }) => {
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lawrence-sable.vercel.app/";
+
+const ActionCard = ({ image = "", title = "", suptitle = "", slug = "", isFavourite = false, isBarHidden = false }) => {
   const [isFavouriteCard, setIsFavouriteCard] = useState(isFavourite);
   const [inView1, setIsInView1] = useState(false);
+
+  const data = [
+    {
+      id: "1",
+      content: (
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl + "/" + "imageURL")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#3b5998] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {facebook2Icon}Share on Facebook{" "}
+        </a>
+      ),
+      isChecked: false,
+    },
+    {
+      id: "2",
+      content: (
+        <a
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent("shareText")}&url=${encodeURIComponent(
+            siteUrl + "/" + "imageURL"
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#1da1f2] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {twitterIcon}Share on Twitter{" "}
+        </a>
+      ),
+      isChecked: false,
+    },
+    {
+      id: "3",
+      content: (
+        <a
+          href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
+            siteUrl + "/" + "imageURL"
+          )}&media=${encodeURIComponent(siteUrl + "/" + "imageURL")}&description=${encodeURIComponent("shareText")}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center [&>svg]:!w-[25px] [&>svg]:!h-[25px] fill-[#bd081c] text-xs gap-1 font-medium cursor-pointer"
+        >
+          {pinterestIcon}Pin it
+        </a>
+      ),
+      isChecked: false,
+    },
+  ];
+
+  const callback = (items: any) => {
+    console.log(items);
+  };
 
   return (
     <motion.div
@@ -20,16 +75,31 @@ const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourit
       onViewportEnter={() => setIsInView1(true)}
       data-lazy="fade"
     >
-      <div className={`action-bar absolute top-0 right-0 m-[20px] z-2 flex gap-3 items-center ${isBarHidden ? 'hidden': ''}`}>
+      <div className={`action-bar absolute top-0 right-0 m-[20px] z-2 flex gap-3 items-center ${isBarHidden ? "hidden" : ""}`}>
         <div className="col bg-white  flex items-center justify-center">
-          <TooltipDemo
+          <DropdownMenuDemo
+            trigger={<div className="w-[40px] h-[40px]  p-[10px] cursor-pointer">{shareIcon}</div>}
+            defaultItems={data}
+            callback={callback}
+            triggerClassName={`dropdown-menu-demo-trigger-custom`}
+            contentClassName={`dropdown-menu-demo-content-custom max-w-[fit-content]`}
+          />
+          {/* <TooltipDemo
             contentClassName="bg-white text-dark shadow-[-1px_-1px_3px_rgba(17,17,17,0.1)] "
             trigger={<div className="w-[40px] h-[40px]  p-[10px] cursor-pointer">{shareIcon}</div>}
             content={<div className="">Share</div>}
-          />
+          /> */}
         </div>
         <div className="col bg-white  flex items-center justify-center">
-          <TooltipDemo
+          <div
+            className={`w-[40px] h-[40px] ${isFavouriteCard ? "p-[7px]" : "p-[10px]"} cursor-pointer ${
+              isFavouriteCard ? "text-red-600" : ""
+            }`}
+            onClick={() => setIsFavouriteCard(!isFavouriteCard)}
+          >
+            {isFavouriteCard ? solidHeartIcon : heartIcon}
+          </div>
+          {/* <TooltipDemo
             contentClassName="bg-white text-dark shadow-[-1px_-1px_3px_rgba(17,17,17,0.1)]"
             trigger={
               <div
@@ -42,7 +112,7 @@ const ActionCard = ({ image = "", title = "", suptitle = "", slug='', isFavourit
               </div>
             }
             content={<div className="">{!isFavouriteCard ? "Add Favourite" : "Favourite"}</div>}
-          />
+          /> */}
         </div>
         <div className="col bg-white text-xs font-medium">
           <div className="flex items-center gap-3 h-[40px]  p-2">
