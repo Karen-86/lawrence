@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ButtonDemo, Navbar,  ActionCard, FAQSection } from "@/components/index";
+import { ButtonDemo, Navbar, ActionCard, FAQSection } from "@/components/index";
 import Link from "next/link";
 import Image from "next/image";
 import localData from "@/localData";
@@ -18,7 +18,7 @@ const {
   featuredSample4Image,
 } = localData.images;
 
-const {articleSignIcon} = localData.svgs
+const { articleSignIcon } = localData.svgs;
 
 const Template = () => {
   return (
@@ -178,11 +178,11 @@ const OurStorySection = () => {
 
   return (
     <section className=" !pb-0 text-center md:text-left">
-      <div className="container" >
+      <div className="container">
         <h3 className="subtitle md:!mb-[90px]">our story</h3>
 
-        <div id='our-story' className="w-0 h-0 pointer-events-none transform-[translateY(-50px)]"></div>
-        <div   className="grid  md:grid-cols-[1fr_1.6fr] 4xl:grid-cols-[1.3fr_1.3fr_1fr] gap-[40px] sm:gap-[80px] md:gap-[120px]">
+        <div id="our-story" className="w-0 h-0 pointer-events-none transform-[translateY(-50px)]"></div>
+        <div className="grid  md:grid-cols-[1fr_1.6fr] 4xl:grid-cols-[1.3fr_1.3fr_1fr] gap-[40px] sm:gap-[80px] md:gap-[120px]">
           <div className="col ">
             <div className="max-w-[390px]  mx-auto md:mx-0 mb-[40px]">
               <h3 className="display-2 mb-[2rem] sm:mb-[4rem]">A little about us</h3>
@@ -410,10 +410,11 @@ const LocationSection = () => {
         <h3 className="subtitle text-center 4xl:!mb-[5rem]">Location</h3>
 
         <h2 className="display-2 text-center max-w-[900px] 4xl:max-w-[1200px] mx-auto mb-[3rem] 4xl:mb-[4rem]">
-          Our showroom in Knightsbridge offers a luxurious, welcoming environment to explore our process and meet our team
+          Our Belgravia showroom offers a luxurious, welcoming environment to explore our process and meet our team.
         </h2>
-        <p className="paragraph-1 text-center max-w-[470px] mx-auto mb-[2.5rem] sm:mb-[5.5rem]">
-          Located near Knightsbridge station and Hyde Park Corner, it’s just a 10-minute walk from Victoria.
+        <p className="paragraph-1 text-center max-w-[470px] xl:max-w-[600px] mx-auto mb-[2.5rem] sm:mb-[5.5rem]">
+          Situated at 12 Lower Grosvenor Place, London, just a few minutes’ walk from Victoria Station and close to Hyde Park
+          Corner, it’s ideally placed in the heart of Belgravia.
         </p>
       </div>
 
